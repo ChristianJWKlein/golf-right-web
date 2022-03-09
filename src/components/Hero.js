@@ -24,8 +24,8 @@ export default function Hero() {
             Stuck up Golf Courses are a thing of the past. <br />
             Find the right course for you.
           </Typography>
-          <section>
-            <Grid container spacing={2} justify='center'>
+          <section className='cta-buttons'>
+            <Grid container spacing={2} style={{ justifyContent: 'center' }}>
               <Grid item>
                 <Button variant='contained' color='primary'>
                   Find your Course

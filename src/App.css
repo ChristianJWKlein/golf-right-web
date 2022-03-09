@@ -41,7 +41,6 @@
   margin-top: 1rem;
   padding: 1rem;
   background-color: rgb(140, 139, 139);
-  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -60,6 +59,6 @@
   margin: '0 auto';
 }
 
-.cta-buttons {
+/* .cta-buttons {
   justify-content: center;
-}
+} */
