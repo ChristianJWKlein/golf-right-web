@@ -19,3 +19,6 @@
 ### Resources
 
     https://mui.com/api/typography/
+    https://mui.com/components/icons/#font-icons....semantic font icons available
+
+# Change data structure to include Ratings length and img alt tag (green iguana)

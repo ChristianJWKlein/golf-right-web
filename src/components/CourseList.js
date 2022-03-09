@@ -14,6 +14,15 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function CourseList() {
+  const [courses, setCourses] = useState();
+
+  useEffect(() => {
+    fetch('https://golf-right-1.uk.r.appspot.com/courses')
+      .then((res) => res.json())
+      .then((data) => setCourses(data))
+      .catch((err) => alert(err));
+  }, []);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -24,7 +33,9 @@ export default function CourseList() {
         {Array.from(Array(6)).map((_, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <Item>
-              <CourseCard />
+              {courses.map((course) => {
+                return <CourseCard key={course.id} course={course} />;
+              })}
             </Item>
           </Grid>
         ))}
