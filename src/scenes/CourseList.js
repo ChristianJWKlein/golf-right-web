@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CourseCard from './CourseCard';
+import CourseCard from '../components/CourseCard';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import { Box, Paper, Grid } from '@mui/material';
 

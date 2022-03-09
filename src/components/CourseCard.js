@@ -35,7 +35,7 @@ export default function CourseCard({ course }) {
             {course.phone}
           </Typography>
           <Typography variant='body2' color='text.primary'>
-            Overall Rating:
+            Overall Rating:&nbsp;
             {Math.round(course.rate.overall_rating * 10).toFixed(1) / 10}
           </Typography>
         </CardContent>
