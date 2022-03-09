@@ -46,3 +46,20 @@
   left: 0;
   width: 100%;
 }
+.header {
+  background-color: rgb(140, 139, 139);
+}
+
+.hero {
+  background-color: aliceblue;
+  padding: 5rem 1rem;
+}
+
+.hero-content {
+  max-width: 600;
+  margin: '0 auto';
+}
+
+.cta-buttons {
+  justify-content: center;
+}
