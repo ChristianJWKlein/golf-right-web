@@ -1,7 +1,15 @@
 import './App.css';
+import Footer from './components/Footer';
+
+import CourseList from './components/CourseList';
 
 function App() {
-  return <h1>Golf Right</h1>;
+  return (
+    <>
+      <CourseList />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
