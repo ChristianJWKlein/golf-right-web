@@ -5,17 +5,23 @@ import Footer from './components/Footer';
 import CourseList from './scenes/CourseList';
 import Hero from './components/Hero';
 import MenuBar from './components/MenuBar';
+import CourseInfoAndRate from './scenes/CourseInfoAndRate';
 
 export const CourseContext = createContext();
 
 function App() {
-  const [selectedCourse, setSelectedCourses] = useState();
+  const [selectedCourse, setSelectedCourse] = useState();
   return (
     <>
-      <CourseContext.Provider value={{ selectedCourse, setSelectedCourses }}>
+      <CourseContext.Provider value={{ selectedCourse, setSelectedCourse }}>
         <MenuBar />
-        <Hero />
-        <CourseList />
+        {/* <Hero />
+        <CourseList /> */}
+        <Routes>
+          <Route path='/' element={<Hero />} />
+          <Route path='/courses' element={<CourseList />} />
+          <Route path='/courses/:id' element={<CourseInfoAndRate />} />
+        </Routes>
         <Footer />
       </CourseContext.Provider>
     </>

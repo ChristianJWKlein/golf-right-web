@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
-// import { CourseContext } from '../App';
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Typography from '@mui/material/Typography';
+import { Link, useNavigate } from 'react-router-dom';
+import { CourseContext } from '../App';
+
 import {
   Button,
   CardActionArea,
@@ -15,9 +13,22 @@ import {
 } from '@mui/material';
 
 export default function CourseCard({ course }) {
+  const { setSelectedCourse } = useContext(CourseContext);
+  let navigate = useNavigate();
+
+  const handleOnClick = () => {
+    setSelectedCourse(course);
+    navigate(`/courses/${course.id}`);
+  };
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      {/* <CardActionArea component={Link} to={`/courses/${course.id}`}> */}
+      <CardActionArea
+        // component={Link}
+        // to={`/courses/${course.id}`}
+        onClick={handleOnClick}
+      >
         <CardMedia
           component='img'
           height='140'
