@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../index.css';
-// import CourseCard from '../components/CourseCard';
 import { CourseContext } from '../App';
+import RatingForm from '../components/RatingForm';
+import SelectDropdown from '../components/SelectDropdown';
 
 export default function CourseInfoAndRate() {
   const { selectedCourse } = useContext(CourseContext);
@@ -16,22 +17,25 @@ export default function CourseInfoAndRate() {
       .then((res) => res.json())
       .then((data) => setOneCourse(data))
       .catch(alert);
-  }, [params]);
+  }, []);
 
-  if (!selectedCourse) {
-    return <p>Loading</p>;
-  }
+  // if (!selectedCourse) {
+  //   return <p>Loading</p>;
+  // }
 
   return (
     <>
       <h1 className='hero'>{oneCourse?.name}</h1>
-      <h2 className='hero'>Overall Rating: {oneCourse?.rate.overall_rating}</h2>
-      <h3 className='hero'>Atmosphere: {oneCourse?.rate.rating.atmosphere}</h3>
-      <h3 className='hero'>
-        Bang For Your Buck: {oneCourse?.rate.rating.bang_for_your_buck}
-      </h3>
-      <h3 className='hero'>{oneCourse?.rate.rating.amenities}</h3>
-      <h3 className='hero'>{oneCourse?.rate.rating.course_quality}</h3>
+
+      <RatingForm />
     </>
   );
 }
+
+/* <h2 className='hero'>Overall Rating: {oneCourse?.rate.overall_rating}</h2>
+<h3 className='hero'>Atmosphere: {oneCourse?.rate.rating.atmosphere}</h3>
+<h3 className='hero'>
+  Bang For Your Buck: {oneCourse?.rate.rating.bang_for_your_buck}
+</h3>
+<h3 className='hero'>{oneCourse?.rate.rating.amenities}</h3>
+<h3 className='hero'>{oneCourse?.rate.rating.course_quality}</h3> */
