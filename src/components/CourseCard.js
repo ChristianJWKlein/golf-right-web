@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CourseContext } from '../App';
 
@@ -15,6 +15,7 @@ import {
 export default function CourseCard({ course }) {
   const { setSelectedCourse } = useContext(CourseContext);
   let navigate = useNavigate();
+  console.log(course);
 
   const handleOnClick = () => {
     setSelectedCourse(course);

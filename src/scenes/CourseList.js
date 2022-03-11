@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CourseCard from '../components/CourseCard';
-import { experimentalStyled as styled } from '@mui/material/styles';
-import { Box, Paper, Grid } from '@mui/material';
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(2),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
+import '../index.css';
+import { Box, Grid } from '@mui/material';
 
 export default function CourseList() {
   const [courses, setCourses] = useState([]);
+  console.log(courses);
 
   useEffect(() => {
     fetch('https://golf-right-1.uk.r.appspot.com/courses')
@@ -22,7 +15,7 @@ export default function CourseList() {
   }, []);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className='hero'>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
