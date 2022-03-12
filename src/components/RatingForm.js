@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Grid,
-  FormControl,
-  Select,
-  MenuItem,
-  Button,
-  Typography,
-} from '@mui/material';
-
-const defaultValues = {
-  number: '',
-};
+import { Grid, FormControl, Select, MenuItem, Button } from '@mui/material';
 
 export default function RatingForm() {
   const [formValues, setFormValues] = useState({
@@ -25,7 +14,10 @@ export default function RatingForm() {
   // where the onChange updates the state;
   // on click of submit, build an object of your 4 values and passes to the backend;
 
-  // const [bang_for_your_buck,
+  const [bang_for_your_buck, setBangForYourBuck] = useState(1);
+  const [amenities, setAmenities] = useState(1);
+  const [atmosphere, setAtmosphere] = useState(1);
+  const [course_quality, setCourseQuality] = useState(1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -50,11 +42,84 @@ export default function RatingForm() {
         spacing={2}
       >
         <Grid item>
+          <p>Bang for your Buck</p>
           {
             <FormControl>
               <Select
-                name='number'
-                value={formValues.number}
+                name='bang_for_your_buck'
+                value={formValues.bang_for_your_buck}
+                onChange={handleInputChange}
+              >
+                {Array(10)
+                  .fill(0)
+                  .map((_, i) => {
+                    const val = i + 1;
+                    return (
+                      <MenuItem key={val} value={val}>
+                        {val}
+                      </MenuItem>
+                    );
+                  })}
+              </Select>
+            </FormControl>
+          }
+        </Grid>
+
+        <Grid item>
+          <p>Amenities</p>
+          {
+            <FormControl>
+              <Select
+                name='amenities'
+                value={formValues.amenities}
+                onChange={handleInputChange}
+              >
+                {Array(10)
+                  .fill(0)
+                  .map((_, i) => {
+                    const val = i + 1;
+                    return (
+                      <MenuItem key={val} value={val}>
+                        {val}
+                      </MenuItem>
+                    );
+                  })}
+              </Select>
+            </FormControl>
+          }
+        </Grid>
+
+        <Grid item>
+          <p>Atmosphere</p>
+          {
+            <FormControl>
+              <Select
+                name='atmosphere'
+                value={formValues.atmosphere}
+                onChange={handleInputChange}
+              >
+                {Array(10)
+                  .fill(0)
+                  .map((_, i) => {
+                    const val = i + 1;
+                    return (
+                      <MenuItem key={val} value={val}>
+                        {val}
+                      </MenuItem>
+                    );
+                  })}
+              </Select>
+            </FormControl>
+          }
+        </Grid>
+
+        <Grid item>
+          <p>Course Quality</p>
+          {
+            <FormControl>
+              <Select
+                name='course_quality'
+                value={formValues.course_quality}
                 onChange={handleInputChange}
               >
                 {Array(10)
