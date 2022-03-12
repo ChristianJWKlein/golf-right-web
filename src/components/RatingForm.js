@@ -16,10 +16,10 @@ export default function RatingForm() {
   // where the onChange updates the state;
   // on click of submit, build an object of your 4 values and passes to the backend;
 
-  const [bang_for_your_buck, setBangForYourBuck] = useState(1);
-  const [amenities, setAmenities] = useState(1);
-  const [atmosphere, setAtmosphere] = useState(1);
-  const [course_quality, setCourseQuality] = useState(1);
+  //   const [bang_for_your_buck, setBangForYourBuck] = useState(1);
+  //   const [amenities, setAmenities] = useState(1);
+  //   const [atmosphere, setAtmosphere] = useState(1);
+  //   const [course_quality, setCourseQuality] = useState(1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,26 +29,33 @@ export default function RatingForm() {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ rating: {} }),
+      body: JSON.stringify({ rating: formValues }),
     })
       .then((res) => res.json())
       .then(() =>
         setFormValues({
-          bang_for_your_buck: 0,
-          amenities: 0,
-          atmosphere: 0,
-          course_quality: 0,
+          bang_for_your_buck: 5,
+          amenities: 5,
+          atmosphere: 5,
+          course_quality: 5,
         })
       )
       .catch(alert);
   };
+
+  useEffect(() => {
+    fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
+      .then()
+      .then()
+      .catch((err) => alert(err)); //confirm alerts use do same thing
+  }, [params.id, params.overall_rating]);
 
   return (
     <form onSubmit={handleSubmit}>

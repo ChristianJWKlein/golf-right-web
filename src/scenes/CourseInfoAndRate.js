@@ -24,14 +24,14 @@ export default function CourseInfoAndRate() {
   return (
     <>
       <h1 className='hero'>{oneCourse?.name}</h1>
+      <h2 className='hero'>Overall Rating: {oneCourse?.rate.overall_rating}</h2>
 
       <RatingForm />
     </>
   );
 }
 
-/* <h2 className='hero'>Overall Rating: {oneCourse?.rate.overall_rating}</h2>
-<h3 className='hero'>Atmosphere: {oneCourse?.rate.rating.atmosphere}</h3>
+/* <h3 className='hero'>Atmosphere: {oneCourse?.rate.rating.atmosphere}</h3>
 <h3 className='hero'>
   Bang For Your Buck: {oneCourse?.rate.rating.bang_for_your_buck}
 </h3>
