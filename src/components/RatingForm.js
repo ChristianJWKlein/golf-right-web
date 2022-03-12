@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, FormControl, Select, MenuItem, Button } from '@mui/material';
+import { useParams } from 'react-router-dom';
 
 export default function RatingForm() {
+  const params = useParams();
   const [formValues, setFormValues] = useState({
     bang_for_your_buck: 1,
     amenities: 1,
@@ -29,7 +31,23 @@ export default function RatingForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formValues);
+    fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ rating: {} }),
+    })
+      .then((res) => res.json())
+      .then(() =>
+        setFormValues({
+          bang_for_your_buck: 0,
+          amenities: 0,
+          atmosphere: 0,
+          course_quality: 0,
+        })
+      )
+      .catch(alert);
   };
 
   return (

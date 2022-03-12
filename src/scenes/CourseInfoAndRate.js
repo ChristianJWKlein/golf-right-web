@@ -3,14 +3,12 @@ import { useParams } from 'react-router-dom';
 import '../index.css';
 import { CourseContext } from '../App';
 import RatingForm from '../components/RatingForm';
-import SelectDropdown from '../components/SelectDropdown';
 
 export default function CourseInfoAndRate() {
   const { selectedCourse } = useContext(CourseContext);
   const params = useParams();
-  console.log(params);
+
   const [oneCourse, setOneCourse] = useState();
-  console.log(oneCourse);
 
   useEffect(() => {
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
