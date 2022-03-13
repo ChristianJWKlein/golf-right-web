@@ -4,7 +4,7 @@ import './App.css';
 import Footer from './components/Footer';
 import CourseList from './scenes/CourseList';
 import Hero from './components/Hero';
-import MenuBar from './components/MenuBar';
+import MenuBar from './components/MenuBar/MenuBar';
 import CourseInfoAndRate from './scenes/CourseInfoAndRate';
 
 export const CourseContext = createContext();

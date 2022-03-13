@@ -1,0 +1,93 @@
+.menuButton {
+  font-family: 'Open Sans, sans-serif';
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 38px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbar div {
+  justify-content: flex-end;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  font: normal normal bold 24px/28px Gill Sans;
+  letter-spacing: 0px;
+  color: #002366;
+  opacity: 1;
+}
+
+a:link {
+  color: #002366;
+} /* Unvisited links */
+a:visited {
+  color: #002366;
+} /* Visited links */
+a:hover {
+  color: #27b2fd;
+} /* Hovered links */
+a:active {
+  color: red;
+} /* Active links */
+
+.alt-font {
+  font-size: 24px;
+}
+
+.main-nav li {
+  list-style: none;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  top: 24px;
+  height: 28px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+@media screen and (max-width: 1050px) {
+  .main-nav {
+    display: flex;
+    gap: 1em;
+  }
+
+  .main-nav li a {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-nav {
+    display: none;
+  }
+
+  .alt-font {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main-nav {
+    display: none;
+  }
+
+  .alt-font {
+    font-size: 9px;
+  }
+}

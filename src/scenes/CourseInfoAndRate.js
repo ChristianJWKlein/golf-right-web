@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../index.css';
 import { CourseContext } from '../App';
 import RatingForm from '../components/RatingForm';
+import { Grid, Box } from '@mui/material';
 
 export default function CourseInfoAndRate() {
   const { selectedCourse } = useContext(CourseContext);
@@ -17,23 +18,44 @@ export default function CourseInfoAndRate() {
       .catch(alert);
   }, []);
 
-  // if (!selectedCourse) {
-  //   return <p>Loading</p>;
-  // }
-
   return (
     <>
       <h1 className='hero'>{oneCourse?.name}</h1>
-      <h2 className='hero'>Overall Rating: {oneCourse?.rate.overall_rating}</h2>
-
-      <RatingForm />
+      <Grid
+        container
+        direction='row'
+        justifyContent='center'
+        alignItems='center'
+      >
+        <ul>
+          <h2>
+            Overall Rating: &nbsp;
+            {Math.round(oneCourse?.rate.overall_rating * 10).toFixed(1) / 10}
+          </h2>
+          <li>
+            Bang for your Buck: &nbsp;
+            {Math.round(oneCourse?.rate.rating.bang_for_your_buck * 10).toFixed(
+              1
+            ) / 10}
+          </li>
+          <li>
+            Amenities &nbsp;
+            {Math.round(oneCourse?.rate.rating.amenities * 10).toFixed(1) / 10}
+          </li>
+          <li>
+            Atmosphere: &nbsp;
+            {Math.round(oneCourse?.rate.rating.atmosphere * 10).toFixed(1) / 10}
+          </li>
+          <li>
+            Course Quality: &nbsp;
+            {Math.round(oneCourse?.rate.rating.course_quality * 10).toFixed(1) /
+              10}
+          </li>
+        </ul>
+      </Grid>
+      <Grid>
+        <RatingForm />
+      </Grid>
     </>
   );
 }
-
-/* <h3 className='hero'>Atmosphere: {oneCourse?.rate.rating.atmosphere}</h3>
-<h3 className='hero'>
-  Bang For Your Buck: {oneCourse?.rate.rating.bang_for_your_buck}
-</h3>
-<h3 className='hero'>{oneCourse?.rate.rating.amenities}</h3>
-<h3 className='hero'>{oneCourse?.rate.rating.course_quality}</h3> */

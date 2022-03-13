@@ -5,7 +5,6 @@ import { Box, Grid } from '@mui/material';
 
 export default function CourseList() {
   const [courses, setCourses] = useState([]);
-  console.log(courses);
 
   useEffect(() => {
     fetch('https://golf-right-1.uk.r.appspot.com/courses')

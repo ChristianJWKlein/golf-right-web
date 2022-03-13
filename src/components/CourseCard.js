@@ -53,7 +53,7 @@ export default function CourseCard({ course }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
+        <Button size='small' color='primary' onClick={handleOnClick}>
           Rate
         </Button>
       </CardActions>
