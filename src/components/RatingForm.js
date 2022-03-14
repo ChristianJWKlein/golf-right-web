@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-import { Grid, FormControl, Select, MenuItem, Button } from '@mui/material';
+import {
+  Grid,
+  FormControl,
+  Select,
+  MenuItem,
+  Button,
+  Typography,
+  Card,
+  CardContent,
+} from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
 import Notification from './Notification';
 
@@ -89,99 +98,139 @@ export default function RatingForm() {
         >
           {/* <Notification notify={notify} setNotify={setNotify} /> */}
           <Grid item>
-            <p>Bang for your Buck</p>
-            {
-              <FormControl>
-                <Select
-                  name='bang_for_your_buck'
-                  value={formValues.bang_for_your_buck}
-                  onChange={handleInputChange}
-                >
-                  {Array(10)
-                    .fill(0)
-                    .map((_, i) => {
-                      const val = i + 1;
-                      return (
-                        <MenuItem key={val} value={val}>
-                          {val}
-                        </MenuItem>
-                      );
-                    })}
-                </Select>
-              </FormControl>
-            }
+            <Card sx={{ maxWidth: 500 }}>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  Bang for your Buck
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Stuff about Bang for your Buck. Please rate from 1-10 with the
+                  selector drop down below.
+                </Typography>
+              </CardContent>
+              {
+                <FormControl>
+                  <Select
+                    name='bang_for_your_buck'
+                    value={formValues.bang_for_your_buck}
+                    onChange={handleInputChange}
+                  >
+                    {Array(10)
+                      .fill(0)
+                      .map((_, i) => {
+                        const val = i + 1;
+                        return (
+                          <MenuItem key={val} value={val}>
+                            {val}
+                          </MenuItem>
+                        );
+                      })}
+                  </Select>
+                </FormControl>
+              }
+            </Card>
           </Grid>
 
           <Grid item>
-            <p>Amenities</p>
-            {
-              <FormControl>
-                <Select
-                  name='amenities'
-                  value={formValues.amenities}
-                  onChange={handleInputChange}
-                >
-                  {Array(10)
-                    .fill(0)
-                    .map((_, i) => {
-                      const val = i + 1;
-                      return (
-                        <MenuItem key={val} value={val}>
-                          {val}
-                        </MenuItem>
-                      );
-                    })}
-                </Select>
-              </FormControl>
-            }
+            <Card sx={{ maxWidth: 500 }}>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  Amenities
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Stuff about Bang for your Buck. Please rate from 1-10 with the
+                  selector drop down below.
+                </Typography>
+              </CardContent>
+              {
+                <FormControl>
+                  <Select
+                    name='amenities'
+                    value={formValues.amenities}
+                    onChange={handleInputChange}
+                  >
+                    {Array(10)
+                      .fill(0)
+                      .map((_, i) => {
+                        const val = i + 1;
+                        return (
+                          <MenuItem key={val} value={val}>
+                            {val}
+                          </MenuItem>
+                        );
+                      })}
+                  </Select>
+                </FormControl>
+              }
+            </Card>
           </Grid>
 
           <Grid item>
-            <p>Atmosphere</p>
-            {
-              <FormControl>
-                <Select
-                  name='atmosphere'
-                  value={formValues.atmosphere}
-                  onChange={handleInputChange}
-                >
-                  {Array(10)
-                    .fill(0)
-                    .map((_, i) => {
-                      const val = i + 1;
-                      return (
-                        <MenuItem key={val} value={val}>
-                          {val}
-                        </MenuItem>
-                      );
-                    })}
-                </Select>
-              </FormControl>
-            }
+            <Card sx={{ maxWidth: 500 }}>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  Atmosphere
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Stuff about Bang for your Buck. Please rate from 1-10 with the
+                  selector drop down below.
+                </Typography>
+              </CardContent>
+              {
+                <FormControl>
+                  <Select
+                    name='atmosphere'
+                    value={formValues.atmosphere}
+                    onChange={handleInputChange}
+                  >
+                    {Array(10)
+                      .fill(0)
+                      .map((_, i) => {
+                        const val = i + 1;
+                        return (
+                          <MenuItem key={val} value={val}>
+                            {val}
+                          </MenuItem>
+                        );
+                      })}
+                  </Select>
+                </FormControl>
+              }
+            </Card>
           </Grid>
 
           <Grid item>
-            <p>Course Quality</p>
-            {
-              <FormControl>
-                <Select
-                  name='course_quality'
-                  value={formValues.course_quality}
-                  onChange={handleInputChange}
-                >
-                  {Array(10)
-                    .fill(0)
-                    .map((_, i) => {
-                      const val = i + 1;
-                      return (
-                        <MenuItem key={val} value={val}>
-                          {val}
-                        </MenuItem>
-                      );
-                    })}
-                </Select>
-              </FormControl>
-            }
+            <Card sx={{ maxWidth: 500 }}>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
+                  Course Quality
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  Stuff about Bang for your Buck. Please rate from 1-10 with the
+                  selector drop down below.
+                </Typography>
+              </CardContent>
+              {
+                <FormControl>
+                  <Select
+                    name='course_quality'
+                    value={formValues.course_quality}
+                    onChange={handleInputChange}
+                  >
+                    {Array(10)
+                      .fill(0)
+                      .map((_, i) => {
+                        const val = i + 1;
+                        return (
+                          <MenuItem key={val} value={val}>
+                            {val}
+                          </MenuItem>
+                        );
+                      })}
+                  </Select>
+                </FormControl>
+              }
+            </Card>
           </Grid>
 
           <Button variant='contained' color='primary' type='submit'>
