@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
 import { Grid, FormControl, Select, MenuItem, Button } from '@mui/material';
-import { useParams, useNvigate, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Notification from './Notification';
 
 export default function RatingForm() {
-  const params = useParams();
   const [formValues, setFormValues] = useState({
     bang_for_your_buck: 1,
     amenities: 1,
     atmosphere: 1,
     course_quality: 1,
   });
+
   const [notify, setNotify] = useState({
     isOpen: false,
     message: '',
     type: '',
   });
   const navigate = useNavigate();
+  const params = useParams();
 
   //Zack wrote this..
   // create a state variable for each field;
@@ -42,11 +43,6 @@ export default function RatingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // alert('Thank you for submitting a rating');
-
-    // if(formValues === 0){
-    //   AlertTitle.send("Uh Oh Looks Like You Forgot To Put A Rating")
-    //   return
-    // }
 
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`, {
       method: 'PATCH',
@@ -74,12 +70,12 @@ export default function RatingForm() {
       .catch(alert);
   };
 
-  useEffect(() => {
-    fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
-      .then()
-      .then()
-      .catch((err) => alert(err)); //confirm alerts use do same thing
-  }, [params.id]);
+  // useEffect(() => {
+  //   fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
+  //     .then()
+  //     .then()
+  //     .catch((err) => alert(err)); //confirm alerts use do same thing
+  // }, [params.id]);
 
   return (
     <>

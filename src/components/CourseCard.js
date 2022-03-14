@@ -15,7 +15,7 @@ import {
 export default function CourseCard({ course }) {
   const { setSelectedCourse } = useContext(CourseContext);
   let navigate = useNavigate();
-  console.log(course);
+  // console.log(course);
 
   const handleOnClick = () => {
     setSelectedCourse(course);
@@ -38,7 +38,7 @@ export default function CourseCard({ course }) {
         />
         <CardContent>
           <Typography gutterBottom variant='h6' component='div'>
-            {course.name}
+            {course?.name}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
             {course.city}, {course.state}

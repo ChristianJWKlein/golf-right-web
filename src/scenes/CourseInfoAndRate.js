@@ -7,16 +7,17 @@ import { Grid, Box } from '@mui/material';
 
 export default function CourseInfoAndRate() {
   const { selectedCourse } = useContext(CourseContext);
-  const params = useParams();
-
+  // console.log(selectedCourse);
   const [oneCourse, setOneCourse] = useState();
+  const params = useParams();
 
   useEffect(() => {
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
       .then((res) => res.json())
       .then((data) => setOneCourse(data))
+      .then(console.log(oneCourse))
       .catch(alert);
-  }, []);
+  }, [params.id]);
 
   return (
     <>
@@ -52,10 +53,22 @@ export default function CourseInfoAndRate() {
               10}
           </li>
         </ul>
+        <Grid className='course-image'>
+          <img src={oneCourse?.img} alt={oneCourse?.alt}></img>
+        </Grid>
+        <Grid>
+          <ul>
+            <li>{oneCourse?.phone}</li>
+            <li>
+              {oneCourse?.address}, {oneCourse?.state} {oneCourse?.zip}
+            </li>
+            <li>{oneCourse?.type}</li>
+            <li>{oneCourse?.holes}</li>
+            <li>{oneCourse?.phone}</li>
+          </ul>
+        </Grid>
       </Grid>
-      <Grid>
-        <RatingForm />
-      </Grid>
+      <RatingForm />
     </>
   );
 }

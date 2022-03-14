@@ -20,7 +20,7 @@ export default function CourseList() {
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {courses.map((course) => (
+        {courses.map((course, index) => (
           <Grid item xs={2} sm={4} md={4}>
             <CourseCard key={course.id} course={course} />
           </Grid>

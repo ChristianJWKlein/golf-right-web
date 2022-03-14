@@ -59,6 +59,19 @@
   margin: '0 auto';
 }
 
+.course-image {
+  width: 30%;
+}
+
+.course-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .MuiGrid-container {
+  width: 10px !important;
+} */
+
 /* .cta-buttons {
   justify-content: center;
 } */
