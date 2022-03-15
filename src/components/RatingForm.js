@@ -75,7 +75,13 @@ export default function RatingForm() {
         });
         //console.log(notify);
       })
-      .then(navigate('/courses'))
+      .then(() => {
+        //   fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
+        // .then((res) => res.json())
+        // .then((data) => setOneCourse(data))
+        // .catch(alert);
+        navigate('/courses');
+      })
       .catch(alert);
   };
 

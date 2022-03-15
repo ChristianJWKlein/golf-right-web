@@ -1,19 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,36 +7,40 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .footer {
+  font-size: 10px;
   margin-top: 1rem;
   padding: 1rem;
-  background-color: rgb(140, 139, 139);
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  );
   bottom: 0;
   left: 0;
   width: 100%;
 }
-.header {
-  background-color: rgb(140, 139, 139);
-}
 
 .hero {
   background-color: aliceblue;
-  padding: 5rem 1rem;
+  padding: 1rem;
+  padding-top: 5rem;
 }
 
 .hero-content {
@@ -64,8 +53,19 @@
 }
 
 .course-container {
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  background-color: aliceblue;
+  padding: 5rem 1rem;
+}
+
+.top-three {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 2rem 0.5rem;
 }
 
 /* .MuiGrid-container {
@@ -75,3 +75,68 @@
 /* .cta-buttons {
   justify-content: center;
 } */
+
+/* .css-r40f8v-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  color: rgba(0, 0, 0, 0.6);
+} */
+
+/* p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+} */
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  ) !important;
+}
+.css-1rwt2y5-MuiButtonBase-root-MuiButton-root {
+  border: 1px solid #298936 !important;
+  color: #389049 !important;
+}
+
+.css-10759ka-MuiTypography-root {
+  color: #389049 !important;
+}
+.css-11b3ww9-MuiPaper-root-MuiAppBar-root {
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  ) !important;
+}
+
+.css-17sgzu2-MuiTypography-root {
+  color: #389049 !important;
+}

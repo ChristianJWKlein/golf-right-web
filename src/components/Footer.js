@@ -12,6 +12,7 @@ export default function Footer() {
         >
           Golf course icons created by Eucalyp - Flaticon
         </a>
+        &copy; 2022 Christian Klein
       </p>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography, Grid, Button } from '@mui/material';
+import TopCourseList from '../scenes/TopCourseList';
 
 export default function Hero() {
   const [course, setCourse] = useState();
@@ -32,7 +33,8 @@ export default function Hero() {
             paragraph
           >
             Stuck up Golf Courses are a thing of the past. <br />
-            Find the right course for you.
+            That is why we created a Rating System Designed to Cater to the Next
+            Generation of Golfers. <br /> Rate a Course to find out more.
           </Typography>
           <section className='cta-buttons'>
             <Grid container spacing={2} style={{ justifyContent: 'center' }}>
@@ -58,6 +60,7 @@ export default function Hero() {
           </section>
         </section>
       </section>
+      <TopCourseList />
     </>
   );
 }

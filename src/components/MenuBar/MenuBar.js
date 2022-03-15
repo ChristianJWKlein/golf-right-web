@@ -50,7 +50,7 @@ export default function MenuBar() {
 
   return (
     <>
-      <header>
+      <header className='header'>
         <AppBar>{displayDesktop()}</AppBar>
       </header>
     </>
