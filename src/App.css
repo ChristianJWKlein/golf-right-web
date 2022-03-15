@@ -158,3 +158,8 @@
   object-fit: cover;
   z-index: -1;
 }
+
+.selector {
+  padding: 2rem;
+  padding-top: 4rem;
+}

@@ -12,12 +12,12 @@ import {
   Button,
 } from '@mui/material';
 
-export default function CourseList() {
+export default function CourseList({ course }) {
   const [courses, setCourses] = useState([]);
-  const [city, setCity] = useState();
-  const [bangForYourBuck, setBangForYourBuck] = useState();
-  const [overallRating, setOverallRating] = useState();
-  const [courseList, setCourseList] = useState();
+  const [city, setCity] = useState('');
+  const [bangForYourBuck, setBangForYourBuck] = useState('');
+  const [overallRating, setOverallRating] = useState('');
+  const [courseList, setCourseList] = useState('');
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -47,6 +47,7 @@ export default function CourseList() {
 
   const handleChange = (event) => {
     setCity(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleClose = () => {
@@ -56,10 +57,23 @@ export default function CourseList() {
   const handleOpen = () => {
     setOpen(true);
   };
-
+  if (!courseList) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100vh',
+        }}
+      >
+        <CircularProgress size={100} />
+      </Box>
+    );
+  }
   return (
     <>
-      <div>
+      <div className='selector'>
         <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
           Open the select
         </Button>
@@ -78,9 +92,9 @@ export default function CourseList() {
             <MenuItem value=''>
               <em>None</em>
             </MenuItem>
-            <MenuItem value={'lake worth'}>Lake Worth</MenuItem>
-            <MenuItem value={'boca raton'}>Boca Raton</MenuItem>
-            <MenuItem value={'miami'}>Miami</MenuItem>
+            <MenuItem value='Lake Worth'>Lake Worth</MenuItem>
+            <MenuItem value='Boca Raton'>Boca Raton</MenuItem>
+            <MenuItem value='Miami'>Miami</MenuItem>
           </Select>
         </FormControl>
       </div>
@@ -93,13 +107,9 @@ export default function CourseList() {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {courses.map((course, index) => (
+          {courseList.map((course, index) => (
             <Grid item xs={2} sm={4} md={4}>
-              {!courses ? (
-                <CircularProgress color='success' />
-              ) : (
-                <CourseCard key={course.id} course={course} />
-              )}
+              <CourseCard key={course.id} course={course} />
             </Grid>
           ))}
         </Grid>
