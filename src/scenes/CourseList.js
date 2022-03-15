@@ -12,13 +12,14 @@ import {
   Button,
 } from '@mui/material';
 
-export default function CourseList({ course }) {
+export default function CourseList() {
   const [courses, setCourses] = useState([]);
   const [city, setCity] = useState('');
-  const [bangForYourBuck, setBangForYourBuck] = useState('');
+  const [bangForYourBuck, setBangForYourBuck] = useState();
   const [overallRating, setOverallRating] = useState('');
-  const [courseList, setCourseList] = useState('');
+  const [courseList, setCourseList] = useState();
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
 
   useEffect(() => {
     let filteredList = courses;
@@ -45,18 +46,20 @@ export default function CourseList({ course }) {
       .catch((err) => alert(err));
   }, []);
 
-  const handleChange = (event) => {
-    setCity(event.target.value);
-    console.log(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   // setCity(event.target.value);
+  //   setOverallRating(event.target.value);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  //   setOpen2(false);
+  // };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  //   setOpen2(true);
+  // };
   if (!courseList) {
     return (
       <Box
@@ -74,27 +77,65 @@ export default function CourseList({ course }) {
   return (
     <>
       <div className='selector'>
-        <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
+        {/* <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
           Open the select
-        </Button>
+        </Button> */}
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id='demo-controlled-open-select-label'>City</InputLabel>
           <Select
             labelId='demo-controlled-open-select-label'
             id='demo-controlled-open-select'
             open={open}
-            onClose={handleClose}
-            onOpen={handleOpen}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
             value={city}
             label='City'
-            onChange={handleChange}
+            onChange={(e) => setCity(e.target.value)}
           >
             <MenuItem value=''>
-              <em>None</em>
+              <em>All</em>
             </MenuItem>
-            <MenuItem value='Lake Worth'>Lake Worth</MenuItem>
             <MenuItem value='Boca Raton'>Boca Raton</MenuItem>
+            <MenuItem value='Boynton Beach'>Boynton Beach</MenuItem>
+            <MenuItem value='Delray Beach'>Delray Beach</MenuItem>
+            <MenuItem value='Lake Worth'>Lake Worth</MenuItem>
             <MenuItem value='Miami'>Miami</MenuItem>
+            <MenuItem value='Palm Beach'>Palm Beach</MenuItem>
+            <MenuItem value='Palm Beach Gardens'>Palm Beach Gardens</MenuItem>
+            <MenuItem value='Royal Palm Beach'>Royal Palm Beach</MenuItem>
+          </Select>
+        </FormControl>
+
+        {/* <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
+          Open the select
+        </Button> */}
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id='demo-controlled-open-select-label'>
+            Overall Rating
+          </InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open2={open2}
+            onClose={() => setOpen2(false)}
+            onOpen={() => setOpen2(true)}
+            value={overallRating}
+            label='Overall Rating'
+            onChange={(e) => setOverallRating(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            {Array(10)
+              .fill(0)
+              .map((_, i) => {
+                const val = i + 1;
+                return (
+                  <MenuItem key={val} value={val}>
+                    {val}
+                  </MenuItem>
+                );
+              })}
           </Select>
         </FormControl>
       </div>
