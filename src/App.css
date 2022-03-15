@@ -7,7 +7,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-} */
+}  */
 
 .App-link {
   color: #61dafb;
@@ -37,8 +37,8 @@
   width: 100%;
 }
 
-.hero {
-  background-color: aliceblue;
+/* .hero {
+ 
   padding: 1rem;
   padding-top: 5rem;
 }
@@ -46,7 +46,7 @@
 .hero-content {
   max-width: 600;
   margin: '0 auto';
-}
+} */
 
 .course-image {
   width: 30%;
@@ -64,6 +64,13 @@
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  /* background: rgb(241, 190, 234);
+  background: linear-gradient(
+    90deg,
+    rgba(241, 190, 234, 0.9598433123249299) 0%,
+    rgba(224, 151, 226, 0.8814119397759104) 39%,
+    rgba(86, 224, 251, 1) 100%
+  ); */
   background-color: aliceblue;
   padding: 2rem 0.5rem;
 }
@@ -139,4 +146,15 @@
 
 .css-17sgzu2-MuiTypography-root {
   color: #389049 !important;
+}
+
+.css-1knaqv7-MuiButtonBase-root-MuiButton-root {
+  color: #389049 !important;
+}
+
+.video-container {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1;
 }

@@ -102,7 +102,7 @@ export default function RatingForm() {
           direction='column'
           spacing={2}
         >
-          {/* <Notification notify={notify} setNotify={setNotify} /> */}
+          <Notification notify={notify} setNotify={setNotify} />
           <Grid item>
             <Card sx={{ maxWidth: 500 }}>
               <CardContent>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography, Grid, Button } from '@mui/material';
 import TopCourseList from '../scenes/TopCourseList';
+import video from '../assets/Right.mp4';
 
 export default function Hero() {
   const [course, setCourse] = useState();
@@ -24,8 +25,11 @@ export default function Hero() {
             color='textPrimary'
             gutterBottom
           >
-            Golf Right
+            {/* Golf Right */}
           </Typography>
+          <video className='video-container' autoPlay loop muted id='video'>
+            <source src={video} type='video/mp4' />
+          </video>
           <Typography
             variant='h6'
             align='center'

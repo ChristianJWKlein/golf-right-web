@@ -24,7 +24,7 @@ export default function CourseList() {
       >
         {courses.map((course, index) => (
           <Grid item xs={2} sm={4} md={4}>
-            {!CourseCard ? (
+            {!courses ? (
               <CircularProgress color='success' />
             ) : (
               <CourseCard key={course.id} course={course} />

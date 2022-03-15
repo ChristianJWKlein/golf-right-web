@@ -4,7 +4,7 @@ import { Alert, Snackbar } from '@mui/material';
 export default function Notification() {
   const [notify, setNotify] = useState(false);
   return (
-    <Snackbar open={notify.isOpen} autoHideDuration={1000}>
+    <Snackbar open={notify.isOpen} autoHideDuration={2000}>
       <Alert variant='outlined' severity={notify.type}>
         {notify.message}
       </Alert>
