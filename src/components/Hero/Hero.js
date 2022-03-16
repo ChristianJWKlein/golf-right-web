@@ -4,8 +4,6 @@ import { Typography, Grid, Fab, Card } from '@mui/material';
 import TopCourseList from '../../scenes/TopCourseList';
 import './Hero.css';
 import video from '../../assets/Right.mp4';
-import { Colorize } from '@mui/icons-material';
-import { color } from '@mui/system';
 
 export default function Hero() {
   const [course, setCourse] = useState();

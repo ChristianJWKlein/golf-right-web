@@ -25,14 +25,14 @@ export default function CourseList() {
     if (city) {
       filteredList = filteredList.filter((courses) => courses.city === city);
     }
-    if (bangForYourBuck) {
-      filteredList = filteredList.filter(
-        (courses) => courses.rate.rating.bang_for_your_buck >= bangForYourBuck
-      );
-    }
     if (overallRating) {
       filteredList = filteredList.filter(
         (courses) => courses.rate.overall_rating >= overallRating
+      );
+    }
+    if (bangForYourBuck) {
+      filteredList = filteredList.filter(
+        (courses) => courses.rate.rating.bang_for_your_buck >= bangForYourBuck
       );
     }
     setCourseList(filteredList);
@@ -63,7 +63,10 @@ export default function CourseList() {
     <>
       <div className='selector'>
         <h1>Courses List</h1>
-        <p>Use the Drop Downs below to Filter through Courses</p>
+        <p>
+          Use the Drop Downs below to Filter through Courses. Be sure to set
+          other selections to "all" when filtering by a specific Attribute.
+        </p>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id='demo-controlled-open-select-label'>City</InputLabel>
           <Select
@@ -107,13 +110,13 @@ export default function CourseList() {
             <MenuItem value=''>
               <em>All</em>
             </MenuItem>
-            {Array(10)
+            {Array(9)
               .fill(0)
               .map((_, i) => {
                 const val = i + 1;
                 return (
                   <MenuItem key={val} value={val}>
-                    {val}
+                    {val + '+'}
                   </MenuItem>
                 );
               })}

@@ -106,8 +106,8 @@ export default function RatingForm() {
                   Bang for your Buck
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
-                  Stuff about Bang for your Buck. Please rate from 1-10 with the
-                  selector drop down below.
+                  $20 for Golf after 3pm no matter the time of year? And you
+                  aren't chased off the course?! 🔥
                 </Typography>
               </CardContent>
               {
@@ -137,11 +137,44 @@ export default function RatingForm() {
             <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
+                  Atmosphere
+                </Typography>
+                <Typography variant='body2' color='text.secondary'>
+                  The Best Golf Courses of Today may be Rockin' some Tunes
+                  around the range and the pro shop 🤘🏽
+                </Typography>
+              </CardContent>
+              {
+                <FormControl>
+                  <Select
+                    name='atmosphere'
+                    value={formValues.atmosphere}
+                    onChange={handleInputChange}
+                  >
+                    {Array(10)
+                      .fill(0)
+                      .map((_, i) => {
+                        const val = i + 1;
+                        return (
+                          <MenuItem key={val} value={val}>
+                            {val}
+                          </MenuItem>
+                        );
+                      })}
+                  </Select>
+                </FormControl>
+              }
+            </Card>
+          </Grid>
+          <Grid item>
+            <Card sx={{ maxWidth: 400 }} className='card-space'>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='div'>
                   Amenities
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
-                  Stuff about Bang for your Buck. Please rate from 1-10 with the
-                  selector drop down below.
+                  A range that has all kinds of cool targets and is equipped
+                  with Top Tracer Technology 💯
                 </Typography>
               </CardContent>
               {
@@ -171,45 +204,11 @@ export default function RatingForm() {
             <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
-                  Atmosphere
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  Stuff about Bang for your Buck. Please rate from 1-10 with the
-                  selector drop down below.
-                </Typography>
-              </CardContent>
-              {
-                <FormControl>
-                  <Select
-                    name='atmosphere'
-                    value={formValues.atmosphere}
-                    onChange={handleInputChange}
-                  >
-                    {Array(10)
-                      .fill(0)
-                      .map((_, i) => {
-                        const val = i + 1;
-                        return (
-                          <MenuItem key={val} value={val}>
-                            {val}
-                          </MenuItem>
-                        );
-                      })}
-                  </Select>
-                </FormControl>
-              }
-            </Card>
-          </Grid>
-
-          <Grid item>
-            <Card sx={{ maxWidth: 400 }} className='card-space'>
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
                   Course Quality
                 </Typography>
                 <Typography variant='body2' color='text.secondary'>
-                  Stuff about Bang for your Buck. Please rate from 1-10 with the
-                  selector drop down below.
+                  Most Courses take pride in Course Quality, especially the
+                  greens.💹
                 </Typography>
               </CardContent>
               {
