@@ -9,7 +9,6 @@ import {
   MenuItem,
   FormControl,
   Select,
-  Button,
 } from '@mui/material';
 
 export default function CourseList() {
@@ -46,20 +45,6 @@ export default function CourseList() {
       .catch((err) => alert(err));
   }, []);
 
-  // const handleChange = (event) => {
-  //   // setCity(event.target.value);
-  //   setOverallRating(event.target.value);
-  // };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  //   setOpen2(false);
-  // };
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  //   setOpen2(true);
-  // };
   if (!courseList) {
     return (
       <Box
@@ -77,9 +62,8 @@ export default function CourseList() {
   return (
     <>
       <div className='selector'>
-        {/* <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
-          Open the select
-        </Button> */}
+        <h1>Courses List</h1>
+        <p>Use the Drop Downs below to Filter through Courses</p>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id='demo-controlled-open-select-label'>City</InputLabel>
           <Select
@@ -106,9 +90,6 @@ export default function CourseList() {
           </Select>
         </FormControl>
 
-        {/* <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
-          Open the select
-        </Button> */}
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Overall Rating

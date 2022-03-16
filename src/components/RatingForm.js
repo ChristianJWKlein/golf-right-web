@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import '../App.css';
 import {
   Grid,
   FormControl,
@@ -35,11 +35,6 @@ export default function RatingForm() {
   // create 4 FormControl componenets for each state variable
   // where the onChange updates the state;
   // on click of submit, build an object of your 4 values and passes to the backend;
-
-  //   const [bang_for_your_buck, setBangForYourBuck] = useState(1);
-  //   const [amenities, setAmenities] = useState(1);
-  //   const [atmosphere, setAtmosphere] = useState(1);
-  //   const [course_quality, setCourseQuality] = useState(1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -101,10 +96,11 @@ export default function RatingForm() {
           justify='center'
           direction='column'
           spacing={2}
+          className='rating-grid'
         >
           <Notification notify={notify} setNotify={setNotify} />
           <Grid item>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
                   Bang for your Buck
@@ -138,7 +134,7 @@ export default function RatingForm() {
           </Grid>
 
           <Grid item>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
                   Amenities
@@ -172,7 +168,7 @@ export default function RatingForm() {
           </Grid>
 
           <Grid item>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
                   Atmosphere
@@ -206,7 +202,7 @@ export default function RatingForm() {
           </Grid>
 
           <Grid item>
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 400 }} className='card-space'>
               <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
                   Course Quality
@@ -238,7 +234,6 @@ export default function RatingForm() {
               }
             </Card>
           </Grid>
-
           <Button variant='contained' color='primary' type='submit'>
             Submit Rating
           </Button>

@@ -28,15 +28,31 @@ export default function CourseInfoAndRate() {
 
   return (
     <>
+      <section className='rank-explanation'>
+        <h1>We Rank Courses off of Four Attributes</h1>
+        <ul>
+          <h3>Bang For Your Buck</h3>
+          <p></p>
+          <h3>Atmosphere</h3>
+          <h3>Amenities</h3>
+          <h3>Course Quality</h3>
+        </ul>
+        <p>
+          These Four Attributes are calculated into an Overall Rating. The
+          Weights are even for each Attribute. Please consider the following
+          when submiting your Rating.
+        </p>
+      </section>
+
       <Grid
         container
         direction='row'
         justifyContent='center'
         alignItems='left'
-        className='course-container'
+        className='one-course-container'
       >
-        <Card sx={{ maxWidth: 600 }}>
-          <Typography gutterBottom variant='h3' component='div'>
+        <Card sx={{ maxWidth: 400 }} className='card-space'>
+          <Typography gutterBottom variant='h3' component='div' align='center'>
             {oneCourse?.name}
           </Typography>
           <CardMedia
@@ -83,7 +99,7 @@ export default function CourseInfoAndRate() {
           </CardContent>
         </Card>
 
-        <Grid>
+        <Grid item justifyItems='right'>
           <Card>
             <RatingForm />
           </Card>

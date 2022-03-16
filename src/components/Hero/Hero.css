@@ -1,0 +1,54 @@
+.hero-button {
+  justify-content: center;
+  position: relative;
+  top: -900%;
+  left: 50%;
+  right: -10%;
+
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  );
+}
+
+.video-container {
+  padding-top: 2rem;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.btn-txt-clr {
+  color: white !important;
+}
+
+/* .hero {
+ 
+  padding: 1rem;
+  padding-top: 5rem;
+}
+
+.hero-content {
+  max-width: 600;
+  margin: '0 auto';
+} */
+
+@media screen and (max-width: 1000px) {
+  .hero-button {
+    top: 50%;
+    left: 50%;
+    font-weight: 700;
+  }
+}

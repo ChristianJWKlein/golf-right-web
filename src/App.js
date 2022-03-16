@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import CourseList from './scenes/CourseList';
-import Hero from './components/Hero';
+import Hero from './components/Hero/Hero.js';
 import MenuBar from './components/MenuBar/MenuBar';
 import CourseInfoAndRate from './scenes/CourseInfoAndRate';
 
@@ -15,8 +15,7 @@ function App() {
     <>
       <CourseContext.Provider value={{ selectedCourse, setSelectedCourse }}>
         <MenuBar />
-        {/* <Hero />
-        <CourseList /> */}
+
         <Routes>
           <Route path='/' element={<Hero />} />
           <Route path='/courses' element={<CourseList />} />
