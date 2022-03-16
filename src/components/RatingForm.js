@@ -26,7 +26,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
     message: '',
     type: '',
   });
-  const navigate = useNavigate();
+
   const params = useParams();
 
   //Zack wrote this..

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../index.css';
 import { CourseContext } from '../App';
 import RatingForm from '../components/RatingForm';
@@ -10,6 +10,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  Button,
 } from '@mui/material';
 
 export default function CourseInfoAndRate() {
@@ -17,6 +18,7 @@ export default function CourseInfoAndRate() {
   const [oneCourse, setOneCourse] = useState();
   const [showForm, setShowForm] = useState(true);
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
@@ -25,6 +27,10 @@ export default function CourseInfoAndRate() {
       .then(console.log(oneCourse))
       .catch(alert);
   }, [params.id]);
+
+  const handleOnClick = () => {
+    navigate('/courses');
+  };
 
   return (
     <>
@@ -133,7 +139,15 @@ export default function CourseInfoAndRate() {
                 setOneCourse={setOneCourse}
               />
             ) : (
-              <h1>Thank you for Rating</h1>
+              <Grid item>
+                <Button
+                  variant='contained'
+                  color='success'
+                  onClick={handleOnClick}
+                >
+                  Rate Another Course
+                </Button>
+              </Grid>
             )}
           </Card>
         </Grid>
