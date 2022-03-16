@@ -14,8 +14,8 @@ import {
 
 export default function CourseInfoAndRate() {
   const { selectedCourse } = useContext(CourseContext);
-  // console.log(selectedCourse);
   const [oneCourse, setOneCourse] = useState();
+  const [showForm, setShowForm] = useState(true);
   const params = useParams();
 
   useEffect(() => {
@@ -127,7 +127,14 @@ export default function CourseInfoAndRate() {
 
         <Grid item justifyItems='right'>
           <Card>
-            <RatingForm />
+            {showForm === true ? (
+              <RatingForm
+                setShowForm={setShowForm}
+                setOneCourse={setOneCourse}
+              />
+            ) : (
+              <h1>Thank you for Rating</h1>
+            )}
           </Card>
         </Grid>
       </Grid>

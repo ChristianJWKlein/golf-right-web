@@ -13,7 +13,7 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 import Notification from './Notification';
 
-export default function RatingForm() {
+export default function RatingForm({ setShowForm, setOneCourse }) {
   const [formValues, setFormValues] = useState({
     bang_for_your_buck: 1,
     amenities: 1,
@@ -68,14 +68,13 @@ export default function RatingForm() {
           message: 'Thank you for Rating',
           type: 'success',
         });
-        //console.log(notify);
+        setShowForm(false);
       })
       .then(() => {
-        //   fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
-        // .then((res) => res.json())
-        // .then((data) => setOneCourse(data))
-        // .catch(alert);
-        navigate('/courses');
+        fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
+          .then((res) => res.json())
+          .then((data) => setOneCourse(data))
+          .catch(alert);
       })
       .catch(alert);
   };

@@ -19,35 +19,41 @@ export default function Hero() {
     <>
       {/* <section className='hero'>
         <section className='hero-content'> */}
-      <video className='video-container' autoPlay loop muted id='video'>
-        <source src={video} type='video/mp4' />
-      </video>
+      <div>
+        <video className='video-container' autoPlay loop muted id='video'>
+          <source src={video} type='video/mp4' />
+        </video>
 
-      <Grid container spacing={2} style={{ justifyContent: 'center' }}>
-        <Fab className='hero-button' variant='extended' onClick={handleOnClick}>
-          <Typography
-            className='btn-txt-clr'
-            variant='h6'
-            align='center'
-            color='ButtonText'
+        <Grid container spacing={2} style={{ justifyContent: 'center' }}>
+          <Fab
+            className='hero-button'
+            variant='extended'
+            onClick={handleOnClick}
           >
-            Find and Rate your Course
-          </Typography>
-        </Fab>
-        <Grid item></Grid>
-        <Card sx={{ maxWidth: 600 }}>
-          <Typography
-            variant='h6'
-            align='center'
-            color='textSecondary'
-            paragraph
-          >
-            Stuck up Golf Courses are a thing of the past. <br />
-            That is why we created a Rating System Designed to Cater to the Next
-            Generation of Golfers. <br /> Rate a Course to find out more.
-          </Typography>
-        </Card>
-      </Grid>
+            <Typography
+              className='btn-txt-clr'
+              variant='h6'
+              align='center'
+              color='ButtonText'
+            >
+              Find and Rate your Course
+            </Typography>
+          </Fab>
+          <Grid item></Grid>
+          <Card sx={{ maxWidth: 600 }}>
+            <Typography
+              variant='h6'
+              align='center'
+              color='textSecondary'
+              paragraph
+            >
+              Stuck up Golf Courses are a thing of the past. <br />
+              That is why we created a Rating System Designed to Cater to the
+              Next Generation of Golfers. <br /> Rate a Course to find out more.
+            </Typography>
+          </Card>
+        </Grid>
+      </div>
       {/* </section>
       </section> */}
       <TopCourseList />
