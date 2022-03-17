@@ -3,7 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { Typography, Grid, Fab, Card } from '@mui/material';
 import TopCourseList from '../../scenes/TopCourseList';
 import './Hero.css';
-import video from '../../assets/Right.mp4';
+import Video from '../../assets/Right.mp4';
+import {
+  HeroContainer,
+  HeroBg,
+  VideoBg,
+  HeroContent,
+  HeroH1,
+  HeroP,
+  HeroBtnWrapper,
+  ArrowRight,
+} from './heroesCss.js';
 
 export default function Hero() {
   const [course, setCourse] = useState();
@@ -17,15 +27,49 @@ export default function Hero() {
 
   return (
     <>
-      {/* <section className='hero'>
-        <section className='hero-content'> */}
-      <div>
-        <video className='video-container' autoPlay loop muted id='video'>
-          <source src={video} type='video/mp4' />
-        </video>
+      <HeroContainer>
+        <HeroBg>
+          <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
+        </HeroBg>
+        <HeroContent>
+          <HeroH1>Stuck up Golf Courses are a Thing of the Past</HeroH1>
+          <HeroP>
+            That is why we created a Rating System Designed to Cater to the Next
+            Generation of Golfers
+          </HeroP>
+          <HeroBtnWrapper>
+            <button id='myBtn' onClick={handleOnClick}>
+              Find and Rate your Course
+            </button>
+          </HeroBtnWrapper>
+        </HeroContent>
+      </HeroContainer>
 
-        <Grid container spacing={2} style={{ justifyContent: 'center' }}>
-          <Fab
+      {/* <video className='video-container' autoPlay loop muted id='video'>
+        <source src={video} type='video/mp4' />
+      </video>
+      <section className='call-to-action'>
+        <Card sx={{ maxWidth: 600 }}>
+          <button id='myBtn' onClick={handleOnClick}>
+            Find and Rate your Course
+          </button>
+          <Typography
+            variant='h6'
+            align='center'
+            color='textSecondary'
+            paragraph
+          >
+            Stuck up Golf Courses are a thing of the past. <br />
+            That is why we created a Rating System Designed to Cater to the Next
+            Generation of Golfers. <br /> Rate a Course to find out more.
+          </Typography>
+        </Card>
+      </section> */}
+
+      {/* //////////////////////// */}
+      {/* <Grid container spacing={2} style={{ justifyContent: 'center' }}>
+        <Grid item></Grid>
+        <Fab
             className='hero-button'
             variant='extended'
             onClick={handleOnClick}
@@ -39,23 +83,10 @@ export default function Hero() {
               Find and Rate your Course
             </Typography>
           </Fab>
-          <Grid item></Grid>
-          <Card sx={{ maxWidth: 600 }}>
-            <Typography
-              variant='h6'
-              align='center'
-              color='textSecondary'
-              paragraph
-            >
-              Stuck up Golf Courses are a thing of the past. <br />
-              That is why we created a Rating System Designed to Cater to the
-              Next Generation of Golfers. <br /> Rate a Course to find out more.
-            </Typography>
-          </Card>
+        <Grid item>
         </Grid>
-      </div>
-      {/* </section>
-      </section> */}
+      </Grid> */}
+
       <TopCourseList />
     </>
   );
