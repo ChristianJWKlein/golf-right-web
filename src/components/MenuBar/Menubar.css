@@ -51,16 +51,16 @@
 
 a:link {
   color: #002366;
-} /* Unvisited links */
+}
 a:visited {
   color: #002366;
-} /* Visited links */
+}
 a:hover {
   color: #27b2fd;
-} /* Hovered links */
+}
 a:active {
   color: red;
-} /* Active links */
+}
 
 .alt-font {
   font-size: 24px;

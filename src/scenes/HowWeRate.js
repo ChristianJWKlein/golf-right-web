@@ -37,11 +37,11 @@ export default function HowWeRate() {
           Is there sand at the beach? 🏝
         </p>
       </ul>
-      <p>
+      <h3>
         These Four Attributes are calculated into an Overall Rating. The Weights
         are even for each Attribute. Please consider the following when
         submiting your Rating.
-      </p>
+      </h3>
     </section>
   );
 }
