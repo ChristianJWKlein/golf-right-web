@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import '../MenuBar/MenuBar';
+import '../MenuBar/Menubar.css';
 
 const MenuData = [
   {
@@ -54,8 +54,10 @@ export default function MenuBar() {
 
   return (
     <>
-      <header className='header'>
-        <AppBar>{displayDesktop()}</AppBar>
+      <header className='css-11b3ww9-MuiPaper-root-MuiAppBar-root'>
+        <AppBar className='css-11b3ww9-MuiPaper-root-MuiAppBar-root'>
+          {displayDesktop()}
+        </AppBar>
       </header>
     </>
   );

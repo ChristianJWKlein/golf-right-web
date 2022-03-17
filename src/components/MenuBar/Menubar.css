@@ -31,7 +31,21 @@
 
 .css-1t29gy6-MuiToolbar-root {
   display: flex;
-  background: #002366 !important;
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  ) !important;
   justify-content: space-between !important;
 }
 
@@ -45,21 +59,35 @@
   text-align: left;
   font: normal normal bold 24px/28px Gill Sans;
   letter-spacing: 0px;
-  color: #002366;
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  );
   opacity: 1;
 }
 
 a:link {
-  color: #002366;
+  color: white;
 }
 a:visited {
-  color: #002366;
+  color: white;
 }
 a:hover {
-  color: #27b2fd;
+  color: darkgray;
 }
 a:active {
-  color: red;
+  color: yellowgreen;
 }
 
 .alt-font {
@@ -84,6 +112,24 @@ a:active {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
+}
+
+.css-11b3ww9-MuiPaper-root-MuiAppBar-root {
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  ) !important;
 }
 
 @media screen and (max-width: 1050px) {
