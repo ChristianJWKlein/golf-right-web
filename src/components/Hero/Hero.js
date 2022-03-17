@@ -14,6 +14,7 @@ import {
   HeroBtnWrapper,
   ArrowRight,
 } from './heroesCss.js';
+import HowWeRate from '../../scenes/HowWeRate';
 
 export default function Hero() {
   const [course, setCourse] = useState();
@@ -67,27 +68,10 @@ export default function Hero() {
       </section> */}
 
       {/* //////////////////////// */}
-      {/* <Grid container spacing={2} style={{ justifyContent: 'center' }}>
-        <Grid item></Grid>
-        <Fab
-            className='hero-button'
-            variant='extended'
-            onClick={handleOnClick}
-          >
-            <Typography
-              className='btn-txt-clr'
-              variant='h6'
-              align='center'
-              color='ButtonText'
-            >
-              Find and Rate your Course
-            </Typography>
-          </Fab>
-        <Grid item>
-        </Grid>
-      </Grid> */}
-
-      <TopCourseList />
+      <Grid container>
+        <TopCourseList />
+        <HowWeRate />
+      </Grid>
     </>
   );
 }

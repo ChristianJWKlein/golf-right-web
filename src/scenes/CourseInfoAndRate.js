@@ -104,13 +104,13 @@ export default function CourseInfoAndRate() {
                 oneCourse?.rate.rating.bang_for_your_buck * 10
               ).toFixed(1) / 10}
               <br />
+              Atmosphere: &nbsp;
+              {Math.round(oneCourse?.rate.rating.atmosphere * 10).toFixed(1) /
+                10}
               Amenities: &nbsp;
               {Math.round(oneCourse?.rate.rating.amenities * 10).toFixed(1) /
                 10}
               <br />
-              Atmosphere: &nbsp;
-              {Math.round(oneCourse?.rate.rating.atmosphere * 10).toFixed(1) /
-                10}
               <br />
               Course Quality: &nbsp;
               {Math.round(oneCourse?.rate.rating.course_quality * 10).toFixed(

@@ -70,6 +70,10 @@
   padding: 2rem 2rem !important;
   background-color: aliceblue !important;
 }
+.card-space-2 {
+  padding: 0.5rem 0.5rem !important;
+  background-color: aliceblue !important;
+}
 .rating-grid {
   background-color: aliceblue !important;
 }
@@ -168,13 +172,6 @@
 
 .css-1knaqv7-MuiButtonBase-root-MuiButton-root {
   color: #389049 !important;
-}
-
-.video-container {
-  width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  z-index: -1;
 }
 
 .selector {
