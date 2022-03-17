@@ -10,7 +10,7 @@ const MenuData = [
   },
   {
     label: 'How We Rate',
-    href: '/#rate',
+    href: '#rate',
   },
   {
     label: 'Courses',

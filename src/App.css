@@ -69,6 +69,8 @@
 .card-space {
   padding: 2rem 2rem !important;
   background-color: aliceblue !important;
+  min-width: 200;
+  row-gap: 3px;
 }
 .card-space-2 {
   padding: 0.5rem 0.5rem !important;
@@ -178,4 +180,10 @@
   padding: 1rem;
   padding-top: 4rem;
   background-color: aliceblue;
+}
+
+.rate-again {
+  justify-content: center;
+  background-color: aliceblue;
+  padding: 27rem 5rem;
 }

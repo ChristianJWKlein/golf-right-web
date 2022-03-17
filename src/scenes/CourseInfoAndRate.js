@@ -94,7 +94,12 @@ export default function CourseInfoAndRate() {
             alt={oneCourse?.alt}
           />
           <CardContent>
-            <Typography gutterBottom variant='h4' component='div'>
+            <Typography
+              gutterBottom
+              variant='h4'
+              component='div'
+              style={{ color: 'green' }}
+            >
               Overall Rating: &nbsp;
               {Math.round(oneCourse?.rate.overall_rating * 10).toFixed(1) / 10}
             </Typography>
@@ -107,17 +112,21 @@ export default function CourseInfoAndRate() {
               Atmosphere: &nbsp;
               {Math.round(oneCourse?.rate.rating.atmosphere * 10).toFixed(1) /
                 10}
+              <br />
               Amenities: &nbsp;
               {Math.round(oneCourse?.rate.rating.amenities * 10).toFixed(1) /
                 10}
-              <br />
               <br />
               Course Quality: &nbsp;
               {Math.round(oneCourse?.rate.rating.course_quality * 10).toFixed(
                 1
               ) / 10}
             </Typography>
-            <Typography variant='body2' color='text.secondary'>
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              style={{ color: 'green' }}
+            >
               {oneCourse?.phone}
               <br />
               {oneCourse?.address}, {oneCourse?.state} {oneCourse?.zip}
@@ -139,7 +148,7 @@ export default function CourseInfoAndRate() {
                 setOneCourse={setOneCourse}
               />
             ) : (
-              <Grid item>
+              <Grid item className='rate-again'>
                 <Button
                   variant='contained'
                   color='success'

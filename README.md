@@ -1,5 +1,7 @@
 # Golf Right
 
+https://golf-right-1.web.app/
+
 ## A Golf Course Ratings Websites Designed to capture the Golf Coures of now.
 
 ### Packages installed
@@ -23,4 +25,8 @@
     https://mui.com/api/typography/
     https://mui.com/components/icons/#font-icons....semantic font icons available
 
-# Change data structure to include Ratings length and img alt tag (green iguana)
+### To Re-Deploy
+
+From build Folder..
+npm run build
+firebase deploy

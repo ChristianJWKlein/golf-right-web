@@ -7,15 +7,36 @@
   font-weight: 700;
   font-size: 18px;
   margin-left: 38px;
+  justify-content: flex !important;
 }
 
+.MuiToolbar-root div {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.MuiToolbar-gutters MuiToolbar-regular toolbar css-1t29gy6-MuiToolbar-root div {
+  display: flex !important;
+  justify-content: space-between !important;
+}
 .toolbar {
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
-.toolbar div {
-  justify-content: flex-end;
+.css-1y942vo-MuiButtonBase-root-MuiButton-root {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.css-1t29gy6-MuiToolbar-root {
+  display: flex;
+  background: #002366 !important;
+  justify-content: space-between !important;
+}
+
+.toolbar div a {
+  justify-content: right !important;
 }
 
 .main-nav {

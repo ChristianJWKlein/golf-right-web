@@ -15,10 +15,17 @@ export default function CourseList() {
   const [courses, setCourses] = useState([]);
   const [city, setCity] = useState('');
   const [bangForYourBuck, setBangForYourBuck] = useState();
+  const [atmosphere, setAtmosphere] = useState();
+  const [amenities, setAmenities] = useState();
+  const [courseQuality, setCourseQuality] = useState();
   const [overallRating, setOverallRating] = useState('');
   const [courseList, setCourseList] = useState();
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
+  const [open5, setOpen5] = useState(false);
+  const [open6, setOpen6] = useState(false);
 
   useEffect(() => {
     let filteredList = courses;
@@ -35,8 +42,31 @@ export default function CourseList() {
         (courses) => courses.rate.rating.bang_for_your_buck >= bangForYourBuck
       );
     }
+    if (atmosphere) {
+      filteredList = filteredList.filter(
+        (courses) => courses.rate.rating.atmosphere >= atmosphere
+      );
+    }
+    if (amenities) {
+      filteredList = filteredList.filter(
+        (courses) => courses.rate.rating.amenities >= amenities
+      );
+    }
+    if (courseQuality) {
+      filteredList = filteredList.filter(
+        (courses) => courses.rate.rating.course_quality >= courseQuality
+      );
+    }
     setCourseList(filteredList);
-  }, [city, bangForYourBuck, overallRating, courses]);
+  }, [
+    city,
+    bangForYourBuck,
+    atmosphere,
+    amenities,
+    courseQuality,
+    overallRating,
+    courses,
+  ]);
 
   useEffect(() => {
     fetch('https://golf-right-1.uk.r.appspot.com/courses')
@@ -122,6 +152,122 @@ export default function CourseList() {
               })}
           </Select>
         </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id='demo-controlled-open-select-label'>
+            Bang for Your Buck
+          </InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open3={open3}
+            onClose={() => setOpen3(false)}
+            onOpen={() => setOpen3(true)}
+            value={bangForYourBuck}
+            label='Bang for Your Buck'
+            onChange={(e) => setBangForYourBuck(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            {Array(9)
+              .fill(0)
+              .map((_, i) => {
+                const val = i + 1;
+                return (
+                  <MenuItem key={val} value={val}>
+                    {val + '+'}
+                  </MenuItem>
+                );
+              })}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id='demo-controlled-open-select-label'>
+            Atmosphere
+          </InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open4={open4}
+            onClose={() => setOpen4(false)}
+            onOpen={() => setOpen4(true)}
+            value={atmosphere}
+            label='Atmosphere'
+            onChange={(e) => setAtmosphere(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            {Array(9)
+              .fill(0)
+              .map((_, i) => {
+                const val = i + 1;
+                return (
+                  <MenuItem key={val} value={val}>
+                    {val + '+'}
+                  </MenuItem>
+                );
+              })}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id='demo-controlled-open-select-label'>
+            Amenities
+          </InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open5={open5}
+            onClose={() => setOpen5(false)}
+            onOpen={() => setOpen5(true)}
+            value={amenities}
+            label='Amenities'
+            onChange={(e) => setAmenities(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            {Array(9)
+              .fill(0)
+              .map((_, i) => {
+                const val = i + 1;
+                return (
+                  <MenuItem key={val} value={val}>
+                    {val + '+'}
+                  </MenuItem>
+                );
+              })}
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id='demo-controlled-open-select-label'>
+            Course Quality
+          </InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open5={open6}
+            onClose={() => setOpen6(false)}
+            onOpen={() => setOpen6(true)}
+            value={courseQuality}
+            label='Course Quality'
+            onChange={(e) => setCourseQuality(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            {Array(9)
+              .fill(0)
+              .map((_, i) => {
+                const val = i + 1;
+                return (
+                  <MenuItem key={val} value={val}>
+                    {val + '+'}
+                  </MenuItem>
+                );
+              })}
+          </Select>
+        </FormControl>
       </div>
 
       <Box sx={{ flexGrow: 1 }} className='course-container'>
@@ -133,7 +279,7 @@ export default function CourseList() {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {courseList.map((course, index) => (
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <CourseCard key={course.id} course={course} />
             </Grid>
           ))}
