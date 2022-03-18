@@ -1,22 +1,8 @@
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}  */
-
-.App-link {
-  color: #61dafb;
-}
-
 .footer {
   font-size: 20px;
-  /* margin-top: 1rem; */
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  color: white;
   background-image: linear-gradient(
     to right top,
     #298936,
@@ -37,17 +23,6 @@
   width: 100%;
 }
 
-/* .hero {
- 
-  padding: 1rem;
-  padding-top: 5rem;
-}
-
-.hero-content {
-  max-width: 600;
-  margin: '0 auto';
-} */
-
 .course-image {
   width: 30%;
 }
@@ -64,7 +39,7 @@
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
-  padding: 2rem 2rem !important;
+  padding: 6rem 1rem;
 }
 .card-space {
   padding: 2rem 2rem !important;
@@ -76,21 +51,20 @@
   padding: 0.5rem 0.5rem !important;
   background-color: aliceblue !important;
 }
+.card-bottom-align-right div {
+  display: flex;
+  justify-content: space-between;
+}
 .rating-grid {
   background-color: aliceblue !important;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .top-three {
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
-  /* background: rgb(241, 190, 234);
-  background: linear-gradient(
-    90deg,
-    rgba(241, 190, 234, 0.9598433123249299) 0%,
-    rgba(224, 151, 226, 0.8814119397759104) 39%,
-    rgba(86, 224, 251, 1) 100%
-  ); */
   background-color: aliceblue;
   padding: 2rem 0.5rem;
 }
@@ -98,32 +72,10 @@
   padding: 4rem;
   background-color: aliceblue;
 }
-
-/* .MuiGrid-container {
-  width: 10px !important;
-} */
-
-/* .cta-buttons {
-  justify-content: center;
-} */
-
-/* .css-r40f8v-MuiTypography-root {
-  margin: 0;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.43;
-  letter-spacing: 0.01071em;
-  color: rgba(0, 0, 0, 0.6);
-} */
-
-/* p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-} */
+.rank-explanation button {
+  display: flex;
+  justify-content: center !important;
+}
 
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   background-image: linear-gradient(
@@ -176,6 +128,37 @@
   color: #389049 !important;
 }
 
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  justify-content: center;
+  background-image: linear-gradient(
+    to right top,
+    #298936,
+    #2e8b3d,
+    #338e43,
+    #389049,
+    #3d924f,
+    #3e9853,
+    #409e58,
+    #41a45c,
+    #3faf5f,
+    #3cba63,
+    #38c666,
+    #33d169
+  );
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: gray;
+  color: #338e43;
+}
+
 .selector {
   padding: 1rem;
   padding-top: 4rem;
@@ -183,7 +166,8 @@
 }
 
 .rate-again {
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   background-color: aliceblue;
-  padding: 27rem 5rem;
+  padding: 5rem 5rem;
 }

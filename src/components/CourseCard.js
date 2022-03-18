@@ -25,12 +25,7 @@ export default function CourseCard({ course }) {
 
   return (
     <Card sx={{ maxWidth: 370 }} className='card-space-2'>
-      {/* <CardActionArea component={Link} to={`/courses/${course.id}`}> */}
-      <CardActionArea
-        // component={Link}
-        // to={`/courses/${course.id}`}
-        onClick={handleOnClick}
-      >
+      <CardActionArea onClick={handleOnClick}>
         <CardMedia
           component='img'
           height='170'
@@ -39,7 +34,7 @@ export default function CourseCard({ course }) {
         />
         <CardContent>
           <Typography gutterBottom variant='h6' component='div'>
-            {course?.name}
+            {course.name}
           </Typography>
 
           <Typography
@@ -68,15 +63,24 @@ export default function CourseCard({ course }) {
                 10}
             </Typography>
           </ul>
+
           <Typography variant='body2' color='text.secondary'>
             ⛳️ &nbsp; {course.city}, {course.state}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary' onClick={handleOnClick}>
-          Rate
-        </Button>
+        <div className='card-bottom-align-right'>
+          <Button
+            size='small'
+            color='primary'
+            onClick={handleOnClick}
+            style={{ color: 'green' }}
+          >
+            Rate
+          </Button>
+          {course.rate.ratings.atmosphere.length} &nbsp;ratings
+        </div>
       </CardActions>
     </Card>
   );

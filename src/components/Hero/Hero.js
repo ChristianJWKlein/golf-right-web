@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typography, Grid, Fab, Card } from '@mui/material';
+import { Grid } from '@mui/material';
 import TopCourseList from '../../scenes/TopCourseList';
 import './Hero.css';
 import Video from '../../assets/Right.mp4';
@@ -12,7 +12,6 @@ import {
   HeroH1,
   HeroP,
   HeroBtnWrapper,
-  ArrowRight,
 } from './heroesCss.js';
 import HowWeRate from '../../scenes/HowWeRate';
 
@@ -33,7 +32,7 @@ export default function Hero() {
           <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
         </HeroBg>
         <HeroContent>
-          <HeroH1>Stuck up Golf Courses are a Thing of the Past</HeroH1>
+          <HeroH1>Stuck Up Golf Courses are a Thing of the Past</HeroH1>
           <HeroP>
             That is why we created a Rating System Designed to Cater to the Next
             Generation of Golfers

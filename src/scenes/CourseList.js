@@ -97,7 +97,7 @@ export default function CourseList() {
           Use the Drop Downs below to Filter through Courses. Be sure to set
           other selections to "all" when filtering by a specific Attribute.
         </p>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 75 }}>
           <InputLabel id='demo-controlled-open-select-label'>City</InputLabel>
           <Select
             labelId='demo-controlled-open-select-label'
@@ -123,7 +123,7 @@ export default function CourseList() {
           </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 146 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Overall Rating
           </InputLabel>
@@ -152,7 +152,7 @@ export default function CourseList() {
               })}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 182 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Bang for Your Buck
           </InputLabel>
@@ -181,7 +181,7 @@ export default function CourseList() {
               })}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 130 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Atmosphere
           </InputLabel>
@@ -210,7 +210,7 @@ export default function CourseList() {
               })}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 115 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Amenities
           </InputLabel>
@@ -239,7 +239,7 @@ export default function CourseList() {
               })}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 150 }}>
           <InputLabel id='demo-controlled-open-select-label'>
             Course Quality
           </InputLabel>

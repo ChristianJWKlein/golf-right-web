@@ -6,6 +6,7 @@ import CourseList from './scenes/CourseList';
 import Hero from './components/Hero/Hero.js';
 import MenuBar from './components/MenuBar/MenuBar';
 import CourseInfoAndRate from './scenes/CourseInfoAndRate';
+import HowWeRate from './scenes/HowWeRate';
 
 export const CourseContext = createContext();
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Hero />} />
           <Route path='/courses' element={<CourseList />} />
           <Route path='/courses/:id' element={<CourseInfoAndRate />} />
+          <Route path='/how-we-rate' element={<HowWeRate />} />
         </Routes>
         <Footer />
       </CourseContext.Provider>

@@ -10,7 +10,8 @@ const MenuData = [
   },
   {
     label: 'How We Rate',
-    href: '/#rate',
+    href: '/how-we-rate',
+    // hash: '#rate'
   },
   {
     label: 'Courses',
@@ -54,7 +55,7 @@ export default function MenuBar() {
 
   return (
     <>
-      <header className='css-11b3ww9-MuiPaper-root-MuiAppBar-root'>
+      <header>
         <AppBar className='css-11b3ww9-MuiPaper-root-MuiAppBar-root'>
           {displayDesktop()}
         </AppBar>

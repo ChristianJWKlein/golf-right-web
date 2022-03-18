@@ -11,7 +11,6 @@ import {
   CardContent,
 } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
-import Notification from './Notification';
 
 export default function RatingForm({ setShowForm, setOneCourse }) {
   const [formValues, setFormValues] = useState({
@@ -19,12 +18,6 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
     amenities: 1,
     atmosphere: 1,
     course_quality: 1,
-  });
-
-  const [notify, setNotify] = useState({
-    isOpen: false,
-    message: '',
-    type: '',
   });
 
   const params = useParams();
@@ -63,11 +56,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           atmosphere: 5,
           course_quality: 5,
         });
-        setNotify({
-          isOpen: true,
-          message: 'Thank you for Rating',
-          type: 'success',
-        });
+
         setShowForm(false);
       })
       .then(() => {
@@ -79,162 +68,173 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
       .catch(alert);
   };
 
-  // useEffect(() => {
-  //   fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
-  //     .then()
-  //     .then()
-  //     .catch((err) => alert(err)); //confirm alerts use do same thing
-  // }, [params.id]);
-
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Grid
-          container
-          alignItems='center'
-          justify='center'
-          direction='column'
-          spacing={2}
-          className='rating-grid'
-        >
-          <Notification notify={notify} setNotify={setNotify} />
+        <Grid container direction='column' alignItems='center' spacing={5}>
           <Grid item>
-            <Card sx={{ maxWidth: 400 }} className='card-space'>
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Bang for your Buck
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  $20 for Golf after 3pm no matter the time of year? And you
-                  aren't chased off the course?! 🔥
-                </Typography>
-              </CardContent>
-              {
-                <FormControl>
-                  <Select
-                    name='bang_for_your_buck'
-                    value={formValues.bang_for_your_buck}
-                    onChange={handleInputChange}
-                  >
-                    {Array(10)
-                      .fill(0)
-                      .map((_, i) => {
-                        const val = i + 1;
-                        return (
-                          <MenuItem key={val} value={val}>
-                            {val}
-                          </MenuItem>
-                        );
-                      })}
-                  </Select>
-                </FormControl>
-              }
-            </Card>
+            <Typography
+              gutterBottom
+              variant='h5'
+              component='div'
+              style={{ padding: 25 }}
+            >
+              Please Select Your Ratings Below 🤘🏽
+            </Typography>
           </Grid>
+          <Grid
+            container
+            alignItems='center'
+            justify='center'
+            direction='row'
+            spacing={4}
+            className='rating-grid'
+          >
+            <Grid item>
+              <Card sx={{ maxWidth: 400 }} className='card-space'>
+                <CardContent>
+                  <Typography gutterBottom variant='h5' component='div'>
+                    Bang for your Buck
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    $20 for Golf after 3pm no matter the time of year? And you
+                    aren't chased off the course?! 🔥
+                  </Typography>
+                </CardContent>
+                {
+                  <FormControl>
+                    <Select
+                      name='bang_for_your_buck'
+                      value={formValues.bang_for_your_buck}
+                      onChange={handleInputChange}
+                    >
+                      {Array(10)
+                        .fill(0)
+                        .map((_, i) => {
+                          const val = i + 1;
+                          return (
+                            <MenuItem key={val} value={val}>
+                              {val}
+                            </MenuItem>
+                          );
+                        })}
+                    </Select>
+                  </FormControl>
+                }
+              </Card>
+            </Grid>
 
-          <Grid item>
-            <Card sx={{ maxWidth: 400 }} className='card-space'>
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Atmosphere
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  The Best Golf Courses of Today may be Rockin' some Tunes
-                  around the range and the pro shop 🤘🏽
-                </Typography>
-              </CardContent>
-              {
-                <FormControl>
-                  <Select
-                    name='atmosphere'
-                    value={formValues.atmosphere}
-                    onChange={handleInputChange}
-                  >
-                    {Array(10)
-                      .fill(0)
-                      .map((_, i) => {
-                        const val = i + 1;
-                        return (
-                          <MenuItem key={val} value={val}>
-                            {val}
-                          </MenuItem>
-                        );
-                      })}
-                  </Select>
-                </FormControl>
-              }
-            </Card>
-          </Grid>
-          <Grid item>
-            <Card sx={{ maxWidth: 400 }} className='card-space'>
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Amenities
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  A range that has all kinds of cool targets and is equipped
-                  with Top Tracer Technology 💯
-                </Typography>
-              </CardContent>
-              {
-                <FormControl>
-                  <Select
-                    name='amenities'
-                    value={formValues.amenities}
-                    onChange={handleInputChange}
-                  >
-                    {Array(10)
-                      .fill(0)
-                      .map((_, i) => {
-                        const val = i + 1;
-                        return (
-                          <MenuItem key={val} value={val}>
-                            {val}
-                          </MenuItem>
-                        );
-                      })}
-                  </Select>
-                </FormControl>
-              }
-            </Card>
-          </Grid>
+            <Grid item>
+              <Card sx={{ maxWidth: 400 }} className='card-space'>
+                <CardContent>
+                  <Typography gutterBottom variant='h5' component='div'>
+                    Atmosphere
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    The Best Golf Courses of Today may be Rockin' some Tunes
+                    around the range and the pro shop 🤘🏽
+                  </Typography>
+                </CardContent>
+                {
+                  <FormControl>
+                    <Select
+                      name='atmosphere'
+                      value={formValues.atmosphere}
+                      onChange={handleInputChange}
+                    >
+                      {Array(10)
+                        .fill(0)
+                        .map((_, i) => {
+                          const val = i + 1;
+                          return (
+                            <MenuItem key={val} value={val}>
+                              {val}
+                            </MenuItem>
+                          );
+                        })}
+                    </Select>
+                  </FormControl>
+                }
+              </Card>
+            </Grid>
+            <Grid item>
+              <Card sx={{ maxWidth: 400 }} className='card-space'>
+                <CardContent>
+                  <Typography gutterBottom variant='h5' component='div'>
+                    Amenities
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    A range that has all kinds of cool targets and is equipped
+                    with Top Tracer Technology 💯
+                  </Typography>
+                </CardContent>
+                {
+                  <FormControl>
+                    <Select
+                      name='amenities'
+                      value={formValues.amenities}
+                      onChange={handleInputChange}
+                    >
+                      {Array(10)
+                        .fill(0)
+                        .map((_, i) => {
+                          const val = i + 1;
+                          return (
+                            <MenuItem key={val} value={val}>
+                              {val}
+                            </MenuItem>
+                          );
+                        })}
+                    </Select>
+                  </FormControl>
+                }
+              </Card>
+            </Grid>
 
-          <Grid item>
-            <Card sx={{ maxWidth: 400 }} className='card-space'>
-              <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Course Quality
-                </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                  Most Courses take pride in Course Quality, especially the
-                  greens.💹
-                </Typography>
-              </CardContent>
-              {
-                <FormControl>
-                  <Select
-                    name='course_quality'
-                    value={formValues.course_quality}
-                    onChange={handleInputChange}
-                  >
-                    {Array(10)
-                      .fill(0)
-                      .map((_, i) => {
-                        const val = i + 1;
-                        return (
-                          <MenuItem key={val} value={val}>
-                            {val}
-                          </MenuItem>
-                        );
-                      })}
-                  </Select>
-                </FormControl>
-              }
-            </Card>
+            <Grid item>
+              <Card sx={{ maxWidth: 400 }} className='card-space'>
+                <CardContent>
+                  <Typography gutterBottom variant='h5' component='div'>
+                    Course Quality
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    Most Courses take pride in Course Quality, especially the
+                    greens.💹
+                  </Typography>
+                </CardContent>
+                {
+                  <FormControl>
+                    <Select
+                      name='course_quality'
+                      value={formValues.course_quality}
+                      onChange={handleInputChange}
+                    >
+                      {Array(10)
+                        .fill(0)
+                        .map((_, i) => {
+                          const val = i + 1;
+                          return (
+                            <MenuItem key={val} value={val}>
+                              {val}
+                            </MenuItem>
+                          );
+                        })}
+                    </Select>
+                  </FormControl>
+                }
+              </Card>
+            </Grid>
           </Grid>
-          <Button variant='contained' color='primary' type='submit'>
-            Submit Rating
-          </Button>
+          <Grid item>
+            <Button
+              id='myBtn'
+              variant='contained'
+              color='primary'
+              type='submit'
+            >
+              Submit Rating
+            </Button>
+          </Grid>
         </Grid>
       </form>
     </>
