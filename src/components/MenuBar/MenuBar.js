@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import '../MenuBar/Menubar.css';
+import logo from '../../assets/favicon.ico';
 
 const MenuData = [
   {
@@ -30,9 +31,12 @@ export default function MenuBar() {
   };
 
   const golfRightLogo = (
-    <Typography variant='h6' component='h1'>
-      Golf Right
-    </Typography>
+    // <Typography variant='h6' component='h1'>
+    //   Golf Right
+    // </Typography>
+    <Button {...{ to: '/', component: Link }}>
+      <img src={logo} alt='Golf right logo' height='42' width='42' />
+    </Button>
   );
 
   const getMenuButtons = () => {

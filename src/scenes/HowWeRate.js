@@ -48,7 +48,7 @@ export default function HowWeRate() {
           These Four Attributes are calculated into an <em>Overall Rating</em>.
           The Weights are even for each Attribute. Please keep it real 💯
         </h3>
-        <button id='myBtn' onClick={handleOnClick}>
+        <button className='hero-btn-bottom' id='myBtn' onClick={handleOnClick}>
           Rank a Course
         </button>
       </section>
