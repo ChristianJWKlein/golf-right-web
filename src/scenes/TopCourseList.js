@@ -26,8 +26,8 @@ export default function TopCourseList() {
       </Typography>
       <Grid
         container
-        paddingLeft='3rem'
-        paddingRight='1rem'
+        paddingLeft='2rem'
+        paddingRight='1.5rem'
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >

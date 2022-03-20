@@ -109,7 +109,7 @@ export default function CourseList() {
         display='flex'
         spacing={4}
       >
-        <div>
+        <div className='courses-list-heading'>
           <Typography variant='h3' style={{ color: 'darkblue' }}>
             Courses List
           </Typography>

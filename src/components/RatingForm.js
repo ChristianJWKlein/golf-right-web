@@ -88,6 +88,8 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
             spacing={4}
             className='rating-grid'
             marginTop={0.1}
+            paddingLeft={4}
+            paddingRight={-1}
           >
             <Grid item>
               <Card sx={{ maxWidth: 400 }} className='card-space'>
@@ -233,21 +235,24 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           justifyItems='center'
           padding='1rem'
         >
-          <Grid item>
+          <Grid
+            item
+            xs={12}
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
             <Button
               id='myBtn'
               variant='contained'
               color='primary'
               type='submit'
-              style={{ display: 'flex', justifyContent: 'center' }}
             >
               Submit Rating
             </Button>
           </Grid>
           <Grid item>
-            <Card className='card-space-7' marginTop='21'>
+            <Card className='card-space-7' marginTop='2'>
               <Typography variant='h5' color='green'>
-                Current Calculated Overall: &nbsp;{' '}
+                Current Calculated Overall Rating: &nbsp;{' '}
                 {(formValues.bang_for_your_buck +
                   formValues.atmosphere +
                   formValues.amenities +

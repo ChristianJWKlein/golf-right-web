@@ -314,6 +314,17 @@ a:active {
   display: flex;
   justify-content: center;
 }
+.courses-list-heading {
+  display: -ms-flexbox !important;
+  justify-items: auto !important;
+  justify-content: center !important;
+}
+
+.get-button-centered {
+  display: -ms-flexbox !important;
+  justify-items: auto !important;
+  justify-content: center !important;
+}
 
 @media screen and (max-width: 1050px) {
   .card-space-6 {
@@ -360,6 +371,12 @@ a:active {
   .card-space-7 h5 {
     font-size: 17px;
   }
+  .courses-list-heading h3 {
+    font-size: 23px;
+  }
+  .courses-list-heading h6 {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -398,6 +415,12 @@ a:active {
     width: 175px auto;
   }
   .card-space-7 h5 {
+    font-size: 13px;
+  }
+  .courses-list-heading h3 {
+    font-size: 18px;
+  }
+  .courses-list-heading h6 {
     font-size: 13px;
   }
 }
