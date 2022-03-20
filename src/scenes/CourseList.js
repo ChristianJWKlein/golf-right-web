@@ -9,6 +9,7 @@ import {
   MenuItem,
   FormControl,
   Select,
+  Typography,
 } from '@mui/material';
 
 export default function CourseList() {
@@ -19,6 +20,7 @@ export default function CourseList() {
   const [amenities, setAmenities] = useState();
   const [courseQuality, setCourseQuality] = useState();
   const [overallRating, setOverallRating] = useState('');
+  const [county, setCounty] = useState('');
   const [courseList, setCourseList] = useState();
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -26,11 +28,17 @@ export default function CourseList() {
   const [open4, setOpen4] = useState(false);
   const [open5, setOpen5] = useState(false);
   const [open6, setOpen6] = useState(false);
+  const [open7, setOpen7] = useState(false);
 
   useEffect(() => {
     let filteredList = courses;
     if (city) {
       filteredList = filteredList.filter((courses) => courses.city === city);
+    }
+    if (county) {
+      filteredList = filteredList.filter(
+        (courses) => courses.county === county
+      );
     }
     if (overallRating) {
       filteredList = filteredList.filter(
@@ -60,6 +68,7 @@ export default function CourseList() {
     setCourseList(filteredList);
   }, [
     city,
+    county,
     bangForYourBuck,
     atmosphere,
     amenities,
@@ -93,10 +102,14 @@ export default function CourseList() {
     <>
       <div className='selector'>
         <h1>Courses List</h1>
-        <p>
+        <Typography variant='body1' style={{ color: 'green' }}>
           Use the Drop Downs below to Filter through Courses. Be sure to set
           other selections to "all" when filtering by a specific Attribute.
-        </p>
+        </Typography>
+        <Typography variant='body1' color='text.primary'>
+          By default, courses are arranged by Overall Rating in Descending
+          Order.
+        </Typography>
         <FormControl sx={{ m: 1, minWidth: 75 }}>
           <InputLabel id='demo-controlled-open-select-label'>City</InputLabel>
           <Select
@@ -120,6 +133,28 @@ export default function CourseList() {
             <MenuItem value='Palm Beach'>Palm Beach</MenuItem>
             <MenuItem value='Palm Beach Gardens'>Palm Beach Gardens</MenuItem>
             <MenuItem value='Royal Palm Beach'>Royal Palm Beach</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 100 }}>
+          <InputLabel id='demo-controlled-open-select-label'>County</InputLabel>
+          <Select
+            labelId='demo-controlled-open-select-label'
+            id='demo-controlled-open-select'
+            open={open7}
+            onClose={() => setOpen7(false)}
+            onOpen={() => setOpen7(true)}
+            value={county}
+            label='County'
+            onChange={(e) => setCounty(e.target.value)}
+          >
+            <MenuItem value=''>
+              <em>All</em>
+            </MenuItem>
+            <MenuItem value='Broward'>Broward</MenuItem>
+            <MenuItem value='Buncombe'>Buncombe</MenuItem>
+            <MenuItem value='Charlestown'>Charlestown</MenuItem>
+            <MenuItem value='Miami-Dade'>Miami-Dade</MenuItem>
+            <MenuItem value='Palm Beach'>Palm Beach</MenuItem>
           </Select>
         </FormControl>
 

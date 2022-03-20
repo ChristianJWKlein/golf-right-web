@@ -19,7 +19,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
     atmosphere: 1,
     course_quality: 1,
   });
-
+  const navigate = useNavigate();
   const params = useParams();
 
   //Zack wrote this..
@@ -37,6 +37,9 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
     });
   };
 
+  const handleOnClick = () => {
+    navigate('../how-we-rate');
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     // alert('Thank you for submitting a rating');
@@ -71,17 +74,13 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Grid container direction='column' alignItems='center' spacing={5}>
-          <Grid item>
-            <Typography
-              gutterBottom
-              variant='h5'
-              component='div'
-              style={{ padding: 25 }}
-            >
-              Please Select Your Ratings Below 🤘🏽
-            </Typography>
-          </Grid>
+        <Grid
+          container
+          direction='column'
+          className='rating-guidance'
+          alignContent='center'
+          spacing={3}
+        >
           <Grid
             container
             alignItems='center'
@@ -89,6 +88,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
             direction='row'
             spacing={4}
             className='rating-grid'
+            marginTop={2}
           >
             <Grid item>
               <Card sx={{ maxWidth: 400 }} className='card-space'>
@@ -97,8 +97,8 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                     Bang for your Buck
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    $20 for Golf after 3pm no matter the time of year? And you
-                    aren't chased off the course?! 🔥
+                    Do they have an electric Sunset Card Deal such as $20 year
+                    round after 3 pm? 🔥
                   </Typography>
                 </CardContent>
                 {
@@ -164,8 +164,8 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                     Amenities
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    A range that has all kinds of cool targets and is equipped
-                    with Top Tracer Technology 💯
+                    An ideal Course? A range that has all kinds of cool targets
+                    and is equipped with Top Tracer Technology 💯
                   </Typography>
                 </CardContent>
                 {
@@ -198,8 +198,8 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                     Course Quality
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
-                    Most Courses take pride in Course Quality, especially the
-                    greens.💹
+                    Does this Course take pride in Course Quality? Most do,
+                    especially around the greens.💹
                   </Typography>
                 </CardContent>
                 {

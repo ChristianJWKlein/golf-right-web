@@ -12,7 +12,6 @@ const MenuData = [
   {
     label: 'How We Rate',
     href: '/how-we-rate',
-    // hash: '#rate'
   },
   {
     label: 'Courses',

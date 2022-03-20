@@ -57,14 +57,14 @@ export const HeroContent = styled.div`
 `;
 export const HeroH1 = styled.h1`
   color: #409e58;
-  font-size: 48px;
+  font-size: 45px;
   padding-top: 20rem;
   text-align: center;
   @media screen and (max-width: 768px) {
-    font-size: 36px;
+    font-size: 32px;
   }
   @media screen and (max-width: 480px) {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 export const HeroP = styled.p`
@@ -74,10 +74,10 @@ export const HeroP = styled.p`
   text-align: center;
   max-width: 600px;
   @media screen and (max-width: 768px) {
-    font-size: 22px;
+    font-size: 20px;
   }
   @media screen and (max-width: 480px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

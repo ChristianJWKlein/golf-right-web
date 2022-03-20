@@ -7,7 +7,7 @@
   font-weight: 700;
   font-size: 18px;
   margin-left: 38px;
-  justify-content: flex !important;
+  justify-content: space-between;
 }
 
 .MuiToolbar-root div {
@@ -133,31 +133,39 @@ a:active {
 }
 
 @media screen and (max-width: 1050px) {
-  .main-nav {
+  .menuButton {
+    display: flex;
+    gap: 1em;
+  }
+  .css-1t29gy6-MuiToolbar-root {
     display: flex;
     gap: 1em;
   }
 
-  .main-nav li a {
+  @media screen and (max-width: 700px) {
+    .menuButton {
+      display: flex;
+    }
+
+    .menuButton {
+      font-size: 14px;
+    }
+  }
+  .css-1t29gy6-MuiToolbar-root {
     display: flex;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .main-nav {
-    display: none;
-  }
-
-  .alt-font {
     font-size: 14px;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .main-nav {
-    display: none;
+@media screen and (max-width: 500px) {
+  .menuButton {
+    display: flex;
   }
 
+  .css-1t29gy6-MuiToolbar-root {
+    display: flex;
+    font-size: 9px;
+  }
   .alt-font {
     font-size: 9px;
   }
