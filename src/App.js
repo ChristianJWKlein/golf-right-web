@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer.js';
 import CourseList from './scenes/CourseList';
 import Hero from './components/Hero/Hero.js';
 import MenuBar from './components/MenuBar/MenuBar';

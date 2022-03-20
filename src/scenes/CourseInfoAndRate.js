@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../index.css';
 import { CourseContext } from '../App';
-import logo from '../assets/favicon.ico';
 import RatingForm from '../components/RatingForm';
 import {
   Grid,
@@ -50,21 +49,24 @@ export default function CourseInfoAndRate() {
           gutterBottom
           variant='h4'
           component='div'
-          style={{ color: 'green' }}
+          style={{ color: 'darkblue' }}
         >
           Course Information and Ratings Form
         </Typography>
         <Typography gutterBottom variant='h6' test='primary'>
-          Scroll Down to Select Ratings and Submit!
+          <a href='#rate-now' style={{ color: 'green' }}>
+            {' '}
+            Scroll Down or Click Here to Select Ratings and Submit!
+          </a>
         </Typography>
-        <Grid item>
+        <Grid item className='card-space'>
           <Card sx={{ maxWidth: 800 }} className='card-space'>
             <Typography
               gutterBottom
               variant='h3'
               component='div'
               align='center'
-              style={{ color: 'green' }}
+              color='text.primary'
             >
               {oneCourse?.name}
             </Typography>
@@ -177,63 +179,72 @@ export default function CourseInfoAndRate() {
               alignContent='center'
               spacing={3}
             >
-              <Grid item>
-                <Typography
-                  gutterBottom
-                  variant='h5'
-                  component='div'
-                  style={{ paddingTop: 25 }}
-                >
-                  Need Guidance on How to Rate?
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Button
-                  id='myBtn'
-                  variant='contained'
-                  color='success'
-                  onClick={handleHowWeRateOnClick}
-                >
-                  See How We Rate
-                </Button>
-              </Grid>
+              <CardContent>
+                <Card className='card-space' style={{ paddingTop: 25 }}>
+                  <Grid item>
+                    <Typography gutterBottom variant='h5' component='div'>
+                      Need Guidance on How to Rate?
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Button
+                      id='myBtn'
+                      variant='contained'
+                      color='success'
+                      onClick={handleHowWeRateOnClick}
+                    >
+                      See How We Rate
+                    </Button>
+                  </Grid>
+                </Card>
+              </CardContent>
               <Grid item>
                 <Typography gutterBottom variant='h5' component='div'>
                   Otherwise...
                 </Typography>
-                <Typography gutterBottom variant='h5' component='div'>
-                  Please Select Your Ratings Below 👇 for each of the Four
-                  Attributes 🤘🏽
-                </Typography>
-                <img
-                  src={logo}
-                  alt='Golf right logo'
-                  height='130'
-                  width='130'
-                />
               </Grid>
             </Grid>
-            <Grid item>
-              <Typography variant='h6' color='text.secondary'>
-                Please Select Values from 1-10 in the Below Dropdown Tabs to
-                Rate.
-              </Typography>
-              <br />
-              <Typography
-                variant='h4'
-                color='text.secondary'
-                style={{ color: 'green' }}
-              >
-                Submitting Rating for: &nbsp;
-                {oneCourse?.name}
-              </Typography>
-            </Grid>
-            <Grid item>
-              <RatingForm
-                setShowForm={setShowForm}
-                setOneCourse={setOneCourse}
-              />
-            </Grid>
+            <CardContent>
+              <Card id='rate-now' className='card-space-6'>
+                <Grid item className='card-space-4'>
+                  <Typography
+                    gutterBottom
+                    variant='h3'
+                    component='div'
+                    color='text.primary'
+                  >
+                    Rating Form
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant='h5'
+                    component='div'
+                    style={{ color: 'green' }}
+                  >
+                    Please Select Your Ratings Below in the Drop Down Tabs 👇
+                    for each of the Four Attributes 🤘🏽
+                  </Typography>
+
+                  <Typography variant='h4' color='text.secondary'>
+                    Submitting Rating for: &nbsp;
+                    {oneCourse?.name}
+                  </Typography>
+                  <Typography variant='h5' color='green'>
+                    Current Overall Rating: &nbsp;
+                    {Math.round(oneCourse?.rate.overall_rating * 10).toFixed(
+                      1
+                    ) / 10}
+                  </Typography>
+                </Grid>
+
+                <Grid item>
+                  <RatingForm
+                    setShowForm={setShowForm}
+                    setOneCourse={setOneCourse}
+                  />
+                </Grid>
+              </Card>
+            </CardContent>
           </>
         ) : (
           <Grid

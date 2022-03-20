@@ -37,9 +37,6 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
     });
   };
 
-  const handleOnClick = () => {
-    navigate('../how-we-rate');
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
     // alert('Thank you for submitting a rating');
@@ -226,6 +223,16 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
             </Grid>
           </Grid>
           <Grid item>
+            <Card className='card-space-4'>
+              <Typography variant='h4' color='text.primary'>
+                Current Calculated Overall: &nbsp;{' '}
+                {(formValues.bang_for_your_buck +
+                  formValues.atmosphere +
+                  formValues.amenities +
+                  formValues.course_quality) /
+                  4}
+              </Typography>
+            </Card>
             <Button
               id='myBtn'
               variant='contained'

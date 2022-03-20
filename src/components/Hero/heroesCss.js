@@ -60,7 +60,7 @@ export const HeroH1 = styled.h1`
   font-size: 45px;
   padding-top: 20rem;
   text-align: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     font-size: 32px;
   }
   @media screen and (max-width: 480px) {
@@ -73,7 +73,7 @@ export const HeroP = styled.p`
   font-size: 24px;
   text-align: center;
   max-width: 600px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 950px) {
     font-size: 20px;
   }
   @media screen and (max-width: 480px) {

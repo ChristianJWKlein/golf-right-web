@@ -101,12 +101,14 @@ export default function CourseList() {
   return (
     <>
       <div className='selector'>
-        <h1>Courses List</h1>
-        <Typography variant='body1' style={{ color: 'green' }}>
+        <Typography variant='h3' style={{ color: 'darkblue' }}>
+          Courses List
+        </Typography>
+        <Typography variant='h6' style={{ color: 'green' }}>
           Use the Drop Downs below to Filter through Courses. Be sure to set
           other selections to "all" when filtering by a specific Attribute.
         </Typography>
-        <Typography variant='body1' color='text.primary'>
+        <Typography variant='h6' color='text.primary'>
           By default, courses are arranged by Overall Rating in Descending
           Order.
         </Typography>
@@ -152,7 +154,7 @@ export default function CourseList() {
             </MenuItem>
             <MenuItem value='Broward'>Broward</MenuItem>
             <MenuItem value='Buncombe'>Buncombe</MenuItem>
-            <MenuItem value='Charlestown'>Charlestown</MenuItem>
+            <MenuItem value='Charleston'>Charleston</MenuItem>
             <MenuItem value='Miami-Dade'>Miami-Dade</MenuItem>
             <MenuItem value='Palm Beach'>Palm Beach</MenuItem>
           </Select>
