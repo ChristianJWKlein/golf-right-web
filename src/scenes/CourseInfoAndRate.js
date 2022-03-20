@@ -41,16 +41,12 @@ export default function CourseInfoAndRate() {
         container
         direction='column'
         justifyContent='center'
+        justifyItems='center'
         alignItems='center'
         spacing={2}
         className='one-course-container'
       >
-        <Typography
-          gutterBottom
-          variant='h4'
-          component='div'
-          style={{ color: 'darkblue' }}
-        >
+        <Typography gutterBottom variant='h4' style={{ color: 'darkblue' }}>
           Course Information and Ratings Form
         </Typography>
         <Typography gutterBottom variant='h6' test='primary'>
@@ -64,7 +60,6 @@ export default function CourseInfoAndRate() {
             <Typography
               gutterBottom
               variant='h3'
-              component='div'
               align='center'
               color='text.primary'
             >
@@ -77,12 +72,7 @@ export default function CourseInfoAndRate() {
               alt={oneCourse?.alt}
             />
             <br />
-            <Typography
-              gutterBottom
-              variant='h5'
-              component='div'
-              align='center'
-            >
+            <Typography gutterBottom variant='h5' align='center'>
               Current Course Statistics and Information:
             </Typography>
             <CardContent>
@@ -97,7 +87,6 @@ export default function CourseInfoAndRate() {
                   <Typography
                     gutterBottom
                     variant='h5'
-                    component='div'
                     style={{ color: 'green' }}
                   >
                     Overall Rating: &nbsp;
@@ -175,18 +164,31 @@ export default function CourseInfoAndRate() {
             <Grid
               container
               direction='column'
+              justifyContent='center'
+              alignItems='center'
+              display='flex'
               className='rating-guidance'
-              alignContent='center'
               spacing={3}
             >
               <CardContent>
-                <Card className='card-space' style={{ paddingTop: 25 }}>
-                  <Grid item>
-                    <Typography gutterBottom variant='h5' component='div'>
+                <Card
+                  className='card-space-6'
+                  style={{
+                    paddingTop: 25,
+                  }}
+                >
+                  <Grid
+                    item
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                  >
+                    <Typography gutterBottom variant='h5'>
                       Need Guidance on How to Rate?
                     </Typography>
                   </Grid>
-                  <Grid item>
+                  <Grid
+                    item
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                  >
                     <Button
                       id='myBtn'
                       variant='contained'
@@ -204,21 +206,24 @@ export default function CourseInfoAndRate() {
                 </Typography>
               </Grid>
             </Grid>
-            <CardContent>
+            <CardContent justifyContent='center' display='flex'>
               <Card id='rate-now' className='card-space-6'>
-                <Grid item className='card-space-4'>
-                  <Typography
-                    gutterBottom
-                    variant='h3'
-                    component='div'
-                    color='text.primary'
-                  >
+                <Grid
+                  container
+                  direction='column'
+                  className='card-space-6'
+                  justifyContent='center'
+                  display='flex-column'
+                  alignItems='center'
+                  justifyItems='center'
+                >
+                  <Typography gutterBottom variant='h3' color='darkblue'>
                     Rating Form
                   </Typography>
                   <Typography
                     gutterBottom
                     variant='h5'
-                    component='div'
+                    paddingBottom='1rem'
                     style={{ color: 'green' }}
                   >
                     Please Select Your Ratings Below in the Drop Down Tabs 👇
@@ -227,7 +232,7 @@ export default function CourseInfoAndRate() {
 
                   <Typography variant='h4' color='text.secondary'>
                     Submitting Rating for: &nbsp;
-                    {oneCourse?.name}
+                    <em>{oneCourse?.name}</em>
                   </Typography>
                   <Typography variant='h5' color='green'>
                     Current Overall Rating: &nbsp;

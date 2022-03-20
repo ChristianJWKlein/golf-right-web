@@ -81,26 +81,28 @@
 }
 .card-space-6 {
   padding: 2rem 2rem !important;
-  background: rgb(72, 128, 130);
+  background-color: aliceblue !important;
+  /* background: rgb(72, 128, 130);
   background: linear-gradient(
     90deg,
     rgba(72, 128, 130, 0.9598433123249299) 0%,
     rgba(49, 72, 80, 0.8814119397759104) 48%,
     rgba(20, 36, 38, 1) 100%
-  );
+  ); */
 }
 .card-bottom-align-right div {
   display: flex;
   justify-content: space-between;
 }
 .rating-grid {
-  background: rgb(72, 128, 130);
+  background-color: aliceblue;
+  /* background: rgb(72, 128, 130);
   background: linear-gradient(
     90deg,
     rgba(72, 128, 130, 0.9598433123249299) 0%,
     rgba(49, 72, 80, 0.8814119397759104) 48%,
     rgba(20, 36, 38, 1) 100%
-  ) !important;
+  ) !important; */
   justify-content: space-around;
   align-items: center;
 }
@@ -119,6 +121,9 @@
 .rank-explanation button {
   display: flex;
   justify-content: center !important;
+}
+.rank-explanation h3 {
+  color: #298936;
 }
 
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
@@ -207,8 +212,8 @@
 }
 
 .selector {
-  padding: 1rem;
-  padding-top: 4rem;
+  padding: 3rem;
+  padding-top: 8rem;
   background-color: aliceblue;
 }
 
@@ -240,3 +245,145 @@
 a:active {
   color: yellowgreen;
 } */
+
+/* For Rating Form to Center */
+.css-167zg92 {
+  margin: 0px 0px 0.35em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+  color: rgba(0, 0, 0, 0.87);
+  justify-content: center;
+  display: flex;
+}
+
+/* For otherwise */
+.css-t1nuxs {
+  margin: 0px 0px 0.35em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  display: flex;
+  justify-content: center;
+}
+
+/* Courses List */
+.css-gepadz-MuiTypography-root {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+  display: flex;
+  justify-content: center;
+}
+/* Text Below */
+.css-2ulfj5-MuiTypography-root {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  display: flex;
+  justify-content: center;
+}
+
+/* More test above drop down */
+.css-1uaewpj-MuiTypography-root {
+  margin: 0;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1050px) {
+  .card-space-6 {
+    display: flex-column;
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card-space-6 h3 {
+    font-size: 25px;
+  }
+  .card-space-6 h4 {
+    font-size: 20px;
+  }
+  .card-space-6 h5 {
+    font-size: 17px;
+  }
+  .card-space-6 h6 {
+    font-size: 16px;
+  }
+  .one-course-container h3 {
+    font-size: 23px;
+  }
+  .one-course-container h4 {
+    font-size: 20px;
+  }
+  .one-course-container h5 {
+    font-size: 18px;
+  }
+  .one-course-container h6 {
+    font-size: 16px;
+  }
+  .one-course-container h7 {
+    font-size: 14px;
+  }
+  .one-course-container h6 a {
+    font-size: 16px;
+  }
+  .card-space img {
+    height: 200px auto;
+    width: 250px auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card-space-6 h3 {
+    font-size: 21px;
+  }
+  .card-space-6 h4 {
+    font-size: 16px;
+  }
+  .card-space-6 h5 {
+    font-size: 13px;
+  }
+  .card-space-6 h6 {
+    font-size: 13px;
+  }
+  .one-course-container h3 {
+    font-size: 18px;
+  }
+  .one-course-container h4 {
+    font-size: 17px;
+  }
+  .one-course-container h5 {
+    font-size: 16px;
+  }
+  .one-course-container h6 {
+    font-size: 13px;
+  }
+  .one-course-container h7 {
+    font-size: 11px;
+  }
+  .one-course-container h6 a {
+    font-size: 12px;
+  }
+  .card-space img {
+    height: 150px auto;
+    width: 175px auto;
+  }
+}

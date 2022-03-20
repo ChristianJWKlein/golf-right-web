@@ -75,6 +75,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           container
           direction='column'
           className='rating-guidance'
+          display='flex-column'
           alignContent='center'
           spacing={3}
         >
@@ -222,25 +223,36 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
               </Card>
             </Grid>
           </Grid>
-          <Grid item>
-            <Card className='card-space-4'>
-              <Typography variant='h4' color='text.primary'>
-                Current Calculated Overall: &nbsp;{' '}
-                {(formValues.bang_for_your_buck +
-                  formValues.atmosphere +
-                  formValues.amenities +
-                  formValues.course_quality) /
-                  4}
-              </Typography>
-            </Card>
-            <Button
-              id='myBtn'
-              variant='contained'
-              color='primary'
-              type='submit'
-            >
-              Submit Rating
-            </Button>
+          <Grid
+            container
+            direction='column'
+            display='flex-column'
+            justifyContent='center'
+            justifyItems='space-between'
+            padding='1rem'
+          >
+            <Grid item>
+              <Grid item>
+                <Button
+                  id='myBtn'
+                  variant='contained'
+                  color='primary'
+                  type='submit'
+                >
+                  Submit Rating
+                </Button>
+              </Grid>
+              <Card className='card-space-6' marginTop='2'>
+                <Typography variant='h4' color='text.primary'>
+                  Current Calculated Overall: &nbsp;{' '}
+                  {(formValues.bang_for_your_buck +
+                    formValues.atmosphere +
+                    formValues.amenities +
+                    formValues.course_quality) /
+                    4}
+                </Typography>
+              </Card>
+            </Grid>
           </Grid>
         </Grid>
       </form>

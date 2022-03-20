@@ -27,6 +27,8 @@ https://golf-right-1.web.app/
 
 ### To Re-Deploy
 
-From build Folder..
 npm run build
+
+then from build Folder..
+
 firebase deploy
