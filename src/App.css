@@ -46,10 +46,10 @@
   padding: 6rem 1rem;
 }
 .card-space {
-  padding: 2rem 2rem !important;
+  padding: 1rem 1rem !important;
   background-color: aliceblue !important;
-  min-width: 200;
-  row-gap: 3px;
+  min-width: 180;
+  row-gap: 1px;
 }
 .card-space-2 {
   padding: 0.5rem 0.5rem !important;
@@ -90,6 +90,14 @@
     rgba(20, 36, 38, 1) 100%
   ); */
 }
+
+.card-space-7 {
+  padding: 1rem 1rem !important;
+  background-color: aliceblue !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
 .card-bottom-align-right div {
   display: flex;
   justify-content: space-between;
@@ -349,6 +357,9 @@ a:active {
     height: 200px auto;
     width: 250px auto;
   }
+  .card-space-7 h5 {
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -385,5 +396,8 @@ a:active {
   .card-space img {
     height: 150px auto;
     width: 175px auto;
+  }
+  .card-space-7 h5 {
+    font-size: 13px;
   }
 }

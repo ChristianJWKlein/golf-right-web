@@ -179,6 +179,7 @@ export default function CourseInfoAndRate() {
                 >
                   <Grid
                     item
+                    xs={12}
                     style={{ display: 'flex', justifyContent: 'center' }}
                   >
                     <Typography gutterBottom variant='h5'>
@@ -187,6 +188,7 @@ export default function CourseInfoAndRate() {
                   </Grid>
                   <Grid
                     item
+                    xs={12}
                     style={{ display: 'flex', justifyContent: 'center' }}
                   >
                     <Button
@@ -217,32 +219,38 @@ export default function CourseInfoAndRate() {
                   alignItems='center'
                   justifyItems='center'
                 >
-                  <Typography gutterBottom variant='h3' color='darkblue'>
-                    Rating Form
-                  </Typography>
-                  <Typography
-                    gutterBottom
-                    variant='h5'
-                    paddingBottom='1rem'
-                    style={{ color: 'green' }}
-                  >
-                    Please Select Your Ratings Below in the Drop Down Tabs 👇
-                    for each of the Four Attributes 🤘🏽
-                  </Typography>
+                  <Grid item xs={12} style={{ alignItems: 'center' }}>
+                    <Typography
+                      gutterBottom
+                      variant='h4'
+                      color='darkblue'
+                      style={{ justifyContent: 'center' }}
+                    >
+                      Rating Form
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      variant='h6'
+                      style={{ color: 'green' }}
+                    >
+                      Please Select Your Ratings Below in the Drop Down Tabs 👇
+                      for each of the Four Attributes 🤘🏽
+                    </Typography>
 
-                  <Typography variant='h4' color='text.secondary'>
-                    Submitting Rating for: &nbsp;
-                    <em>{oneCourse?.name}</em>
-                  </Typography>
-                  <Typography variant='h5' color='green'>
-                    Current Overall Rating: &nbsp;
-                    {Math.round(oneCourse?.rate.overall_rating * 10).toFixed(
-                      1
-                    ) / 10}
-                  </Typography>
+                    <Typography variant='h5' color='text.secondary'>
+                      Submitting Rating for: &nbsp;
+                      <em>{oneCourse?.name}</em>
+                    </Typography>
+                    <Typography variant='h5' color='green'>
+                      Current Overall Rating: &nbsp;
+                      {Math.round(oneCourse?.rate.overall_rating * 10).toFixed(
+                        1
+                      ) / 10}
+                    </Typography>
+                  </Grid>
                 </Grid>
 
-                <Grid item>
+                <Grid item xs={12}>
                   <RatingForm
                     setShowForm={setShowForm}
                     setOneCourse={setOneCourse}

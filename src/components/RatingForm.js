@@ -74,10 +74,11 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
         <Grid
           container
           direction='column'
-          className='rating-guidance'
           display='flex-column'
           alignContent='center'
+          justifyItems='center'
           spacing={3}
+          xs={12}
         >
           <Grid
             container
@@ -86,7 +87,7 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
             direction='row'
             spacing={4}
             className='rating-grid'
-            marginTop={2}
+            marginTop={0.1}
           >
             <Grid item>
               <Card sx={{ maxWidth: 400 }} className='card-space'>
@@ -223,36 +224,37 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
               </Card>
             </Grid>
           </Grid>
-          <Grid
-            container
-            direction='column'
-            display='flex-column'
-            justifyContent='center'
-            justifyItems='space-between'
-            padding='1rem'
-          >
-            <Grid item>
-              <Grid item>
-                <Button
-                  id='myBtn'
-                  variant='contained'
-                  color='primary'
-                  type='submit'
-                >
-                  Submit Rating
-                </Button>
-              </Grid>
-              <Card className='card-space-6' marginTop='2'>
-                <Typography variant='h4' color='text.primary'>
-                  Current Calculated Overall: &nbsp;{' '}
-                  {(formValues.bang_for_your_buck +
-                    formValues.atmosphere +
-                    formValues.amenities +
-                    formValues.course_quality) /
-                    4}
-                </Typography>
-              </Card>
-            </Grid>
+        </Grid>
+        <Grid
+          container
+          direction='column'
+          display='flex'
+          justifyContent='center'
+          justifyItems='center'
+          padding='1rem'
+        >
+          <Grid item>
+            <Button
+              id='myBtn'
+              variant='contained'
+              color='primary'
+              type='submit'
+              style={{ display: 'flex', justifyContent: 'center' }}
+            >
+              Submit Rating
+            </Button>
+          </Grid>
+          <Grid item>
+            <Card className='card-space-7' marginTop='21'>
+              <Typography variant='h5' color='green'>
+                Current Calculated Overall: &nbsp;{' '}
+                {(formValues.bang_for_your_buck +
+                  formValues.atmosphere +
+                  formValues.amenities +
+                  formValues.course_quality) /
+                  4}
+              </Typography>
+            </Card>
           </Grid>
         </Grid>
       </form>
