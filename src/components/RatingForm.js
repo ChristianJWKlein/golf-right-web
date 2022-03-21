@@ -13,6 +13,10 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 
 export default function RatingForm({ setShowForm, setOneCourse }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const [formValues, setFormValues] = useState({
     bang_for_your_buck: 1,
     amenities: 1,
@@ -235,31 +239,22 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           justifyItems='center'
           padding='1rem'
         >
-          <Grid
-            item
-            xs={12}
-            className='get-button-centered'
-            //17:18 o clock save point sunday 3/20. not sure if saved.
-          >
-            <Button
-              id='myBtn'
-              variant='contained'
-              color='primary'
-              type='submit'
-            >
-              Submit Rating
-            </Button>
-          </Grid>
-          <Grid item>
+          <Grid item direction='column'>
             <Card className='card-space-7' marginTop='2'>
-              <Typography variant='h5' color='green'>
-                Current Calculated Overall Rating: &nbsp;{' '}
+              <button
+                id='myBtn'
+                variant='contained'
+                type='submit'
+                className='get-button-centered'
+              >
+                Submit Rating (Overall: &nbsp;
                 {(formValues.bang_for_your_buck +
                   formValues.atmosphere +
                   formValues.amenities +
                   formValues.course_quality) /
                   4}
-              </Typography>
+                )
+              </button>
             </Card>
           </Grid>
         </Grid>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import TopCourseList from '../../scenes/TopCourseList';
@@ -16,6 +16,9 @@ import {
 import HowWeRate from '../../scenes/HowWeRate';
 
 export default function Hero() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const [course, setCourse] = useState();
 
   const navigate = useNavigate();
@@ -32,7 +35,7 @@ export default function Hero() {
           <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
         </HeroBg>
         <HeroContent>
-          <HeroH1>Stuck Up Golf Courses are a Thing of the Past</HeroH1>
+          <HeroH1>Strict Golf Courses are a Thing of the Past</HeroH1>
           <HeroP>
             That is why we created a Rating System Designed to Cater to the Next
             Generation of Golfers

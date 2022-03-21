@@ -166,8 +166,12 @@ export default function CourseList() {
               <MenuItem value='Broward'>Broward</MenuItem>
               <MenuItem value='Buncombe'>Buncombe</MenuItem>
               <MenuItem value='Charleston'>Charleston</MenuItem>
+              <MenuItem value='Lee'>Lee</MenuItem>
               <MenuItem value='Miami-Dade'>Miami-Dade</MenuItem>
               <MenuItem value='Palm Beach'>Palm Beach</MenuItem>
+              <MenuItem value='Pinellas'>Pinellas</MenuItem>
+              <MenuItem value='Polk'>Polk</MenuItem>
+              <MenuItem value='Wayne'>Wayne</MenuItem>
             </Select>
           </FormControl>
 

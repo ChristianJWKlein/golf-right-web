@@ -180,7 +180,10 @@ export default function CourseInfoAndRate() {
                   <Grid
                     item
                     xs={12}
-                    style={{ display: 'flex', justifyContent: 'center' }}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                    }}
                   >
                     <Typography gutterBottom variant='h5'>
                       Need Guidance on How to Rate?

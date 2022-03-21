@@ -330,6 +330,10 @@ a:active {
   justify-content: center !important;
 }
 
+.css-46bh2p-MuiCardContent-root {
+  padding: 50px !important;
+}
+
 @media screen and (max-width: 1050px) {
   .card-space-6 {
     display: flex-column;
