@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .footer {
   margin-bottom: 0;
   margin-top: 0;

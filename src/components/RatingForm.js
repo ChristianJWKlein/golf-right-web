@@ -238,7 +238,8 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           <Grid
             item
             xs={12}
-            style={{ display: 'flex', justifyContent: 'center' }}
+            className='get-button-centered'
+            //17:18 o clock save point sunday 3/20. not sure if saved.
           >
             <Button
               id='myBtn'
