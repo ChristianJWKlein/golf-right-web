@@ -1,12 +1,16 @@
 # Golf Right
 
-https://golf-right-1.web.app/
-
 ## A Golf Course Ratings Websites Designed to capture the Golf Coures of Now.
+
+## Website Link
+
+https://golf-right-1.web.app/
 
 ## Tutorial
 
-![](./tutorials/2022-03-22 09.15.54.gif)
+![](./tutorials/vid1.gif)
+![](./tutorials/vid2.gif)
+![](./tutorials/vid3.gif)
 
 ### Packages installed
 
@@ -20,7 +24,13 @@ https://golf-right-1.web.app/
 
     npm i react-router-dom
 
-### Resources
+### To Clone
+
+https://github.com/ChristianJWKlein/golf-right-web.git
+
+### Backend
+
+golf-right-api
 
 ### To Re-Deploy
 
