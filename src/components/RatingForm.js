@@ -247,13 +247,12 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                 type='submit'
                 className='get-button-centered'
               >
-                Submit Rating (Overall: &nbsp;
+                Submit Rating Overall: &nbsp;
                 {(formValues.bang_for_your_buck +
                   formValues.atmosphere +
                   formValues.amenities +
                   formValues.course_quality) /
                   4}
-                )
               </button>
             </Card>
           </Grid>
