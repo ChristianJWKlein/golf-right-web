@@ -1,6 +1,6 @@
 # Golf Right
 
-## A Golf Course Ratings Websites Designed to capture the Golf Coures of Now.
+## A Golf Course Ratings Websites Designed to capture the Golf Coures of Now. Future work looks to verify reviews and provide specific insight with user comments of attribute characteristics.
 
 ## Website Link
 
