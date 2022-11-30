@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import '../App.css';
+import React, { useState, useEffect } from 'react'
+import '../App.css'
 import {
   Grid,
   FormControl,
@@ -9,40 +9,33 @@ import {
   Typography,
   Card,
   CardContent,
-} from '@mui/material';
-import { useParams, useNavigate } from 'react-router-dom';
+} from '@mui/material'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export default function RatingForm({ setShowForm, setOneCourse }) {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   const [formValues, setFormValues] = useState({
     bang_for_your_buck: 1,
     amenities: 1,
     atmosphere: 1,
     course_quality: 1,
-  });
-  const navigate = useNavigate();
-  const params = useParams();
-
-  //Zack wrote this..
-  // create a state variable for each field;
-  // set the initial state value to 1;
-  // create 4 FormControl componenets for each state variable
-  // where the onChange updates the state;
-  // on click of submit, build an object of your 4 values and passes to the backend;
+  })
+  const navigate = useNavigate()
+  const params = useParams()
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormValues({
       ...formValues,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // alert('Thank you for submitting a rating');
 
     fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`, {
@@ -59,18 +52,17 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
           amenities: 5,
           atmosphere: 5,
           course_quality: 5,
-        });
-
-        setShowForm(false);
+        })
+        setShowForm(false)
       })
       .then(() => {
         fetch(`https://golf-right-1.uk.r.appspot.com/courses/${params.id}`)
           .then((res) => res.json())
           .then((data) => setOneCourse(data))
-          .catch(alert);
+          .catch(alert)
       })
-      .catch(alert);
-  };
+      .catch(alert)
+  }
 
   return (
     <>
@@ -116,12 +108,12 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                       {Array(10)
                         .fill(0)
                         .map((_, i) => {
-                          const val = i + 1;
+                          const val = i + 1
                           return (
                             <MenuItem key={val} value={val}>
                               {val}
                             </MenuItem>
-                          );
+                          )
                         })}
                     </Select>
                   </FormControl>
@@ -150,12 +142,12 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                       {Array(10)
                         .fill(0)
                         .map((_, i) => {
-                          const val = i + 1;
+                          const val = i + 1
                           return (
                             <MenuItem key={val} value={val}>
                               {val}
                             </MenuItem>
-                          );
+                          )
                         })}
                     </Select>
                   </FormControl>
@@ -183,12 +175,12 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                       {Array(10)
                         .fill(0)
                         .map((_, i) => {
-                          const val = i + 1;
+                          const val = i + 1
                           return (
                             <MenuItem key={val} value={val}>
                               {val}
                             </MenuItem>
-                          );
+                          )
                         })}
                     </Select>
                   </FormControl>
@@ -217,12 +209,12 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
                       {Array(10)
                         .fill(0)
                         .map((_, i) => {
-                          const val = i + 1;
+                          const val = i + 1
                           return (
                             <MenuItem key={val} value={val}>
                               {val}
                             </MenuItem>
-                          );
+                          )
                         })}
                     </Select>
                   </FormControl>
@@ -259,5 +251,5 @@ export default function RatingForm({ setShowForm, setOneCourse }) {
         </Grid>
       </form>
     </>
-  );
+  )
 }
